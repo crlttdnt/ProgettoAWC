@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PGRC</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- link css -->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="overflow-x-hidden">
+
+    <header>
+
+        <!-- Navigation -->
+        <div class="container-xl mx-auto pt-4">
+            <div class="bg-light rounded-3 position-relative">
+                <nav class="navbar navbar-expand-lg bg-body-primary">
+                    <button class="navbar-toggler bg-white ms-auto me-3" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse px-4" id="navbarNav">
+                        <div class="d-flex me-3">
+                            <a href="#">
+                                <img src="../img/logo.png" alt="PGRC" height="50">
+                            </a>
+                        </div>
+                        <ul class="navbar-nav d-flex justify-content-between align-items-center w-100 m-0 gap-4">
+                            <li class="nav-item">
+                                <a class="nav-link text-uppercase fs-6" href="">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-uppercase fs-6" href="pag/ricerca.html">recipes</a>
+                            </li>
+                            <li class="loggato d-none nav-item">
+                                <a class="nav-link text-uppercase fs-6" href="pag/account.html">My
+                                    cookbook</a>
+                            </li>
+                            <li class="nav-item flex-grow-1">
+                                <form class="d-flex w-100" role="search" action="pag/ricerca.html">
+                                    <input class="form-control me-2 focus-ring focus-ring-light w-100" type="search"
+                                        name="search" id="search" placeholder="Search" aria-label="Search">
+                                    <button type="submit" class="btn btn-outline-light me-2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                            <path
+                                                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                                        </svg>
+                                    </button>
+                                    <a class="loggato d-none btn btn-outline-light" href="pag/account.html">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                            fill="currentColor" class="bi bi-person" viewBox="0 0 20 20">
+                                            <path
+                                                d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z" />
+                                        </svg>
+                                    </a>
+                                </form>
+                            </li>
+                            <li class="nav-item">
+                                <a class="non-loggato btn btn-dark" data-bs-toggle="modal" data-bs-target="#login">
+                                    Log In
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="non-loggato btn btn-outline-dark" data-bs-toggle="modal"
+                                    data-bs-target="#new-account"> Sign up
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+
+            </div>
+        </div>
+
+
+    </header>
+
+    <section class="container-xl mx-auto my-5">
+        <div class="container-xxl my-5 py-3 d-flex justify-content-center">
+            <div class="bg-light px-5 py-4 rounded-5 shadow w-75">
+                <h3 class="ms-5 mt-3 mb-0 pb-0 text-uppercase">My Profile:</h3>
+                <div class="w-100">
+                    <div class="d-lg-flex justify-content-center gap-4 mx-lg-5 align-items-center">
+                        <div class="d-flex justify-content-center">
+                            <img id="utente-img" src="../img/non-loggato.png" width="220 rem" height="220 rem" alt="">
+                        </div>
+                        <div class="flex-grow-1">
+                            <div>
+
+                                <div class="mb-3 d-flex align-items-center gap-3">
+                                    <label for="email">Email:</label>
+                                    <h4 id="utente-email">carlotta.donato03@gmail.com</h4>
+                                </div>
+                                <div class="d-md-grid gap-2"
+                                    style="grid-template-rows: auto auto; grid-template-columns: auto auto;">
+                                    <div class="mb-3">
+                                        <label for="nome">First Name</label>
+                                        <h3 id="utente-nome">
+                                            <input name="nome-modify" id="nome-modify"
+                                                class="form-control focus-ring focus-ring-green" type="text" value=""
+                                                oninput="controllaCampo(this)" pattern="[a-zA-Z]{2,}$" required>
+                                        </h3>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="cognome">Last Name</label>
+                                        <h3 id="utente-cognome">
+                                            <input name="lname-modify" id="lname-modify"
+                                                class="form-control focus-ring focus-ring-green" type="text"
+                                                oninput="controllaCampo(this)" pattern="[a-zA-Z]{2,}$" required>
+                                        </h3>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="date">Date of Birth</label>
+                                        <h3 id="utente-data">
+                                            <input name="date-modify" id="birthdate-modify"
+                                                class="form-control focus-ring focus-ring-green " type="date"
+                                                oninput="controllaData(this)" required>
+                                        </h3>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="date">Password</label>
+                                        <h3 id="utente-data">
+                                            <input name="password-modify" id="password-modify"
+                                                class="form-control focus-ring focus-ring-green password"
+                                                type="password" value="" oninput="controllaCampo(this)"
+                                                pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
+                                                aria-describedby="password-info">
+                                        </h3>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="d-flex justify-content-end">
+                                <button data-bs-toggle="modal" class="btn btn-danger me-5"> Delete your account</button>
+                                <button type="reset" class="btn btn-outline-dark me-2" onclick="logout()">Log
+                                    out</button>
+                                <button type="submit" class="btn btn-success me-2">Save the changes</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="container-xxl mx-auto mt-3">
+            <div class="bg-white rounded-5 p-3 my-5">
+                <div class="row align-items-start">
+                    <!-- Cookbook -->
+                    <div class="tab-pane fade show active overflow-x-hidden" id="v-pills-ricettario" role="tabpanel"
+                        aria-labelledby="v-pills-ricettario-tab" tabindex="0">
+                        <div class="overflow-x-auto">
+                            <h3 class="ms-5 mt-3 text-uppercase">My Cookbook:</h3>
+                            <div id="ricettario"
+                                class="d-flex gap-3 justify-content-center flex-column align-items-center">
+                                <div class="card m-3 p-3 rounded-5 border-1 w-100" style="max-width: 900px;"
+                                    data-template-type="attribute" data-template-attribute="data-my-review"
+                                    data-template-value="my_review" data-my-review="false">
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <div class="card-body">
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <img src="https://www.themealdb.com/images/media/meals/yqwtvu1487426027.jpg"
+                                                        class="card-img card-img-top w-100" alt="...">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-9">
+                                            <div class="card-body">
+                                                <h4 class="mb-2">
+                                                    Nome della Ricetta
+                                                </h4>
+                                                <p class="mb-0 pb-0">
+                                                    Nota:
+                                                </p>
+                                                <p class="fs-5">
+                                                    Ciao come va
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <!-- Review Metadata -->
+                                        <span data-template-type="attribute" data-template-attribute="data-timestamp"
+                                            data-template-value="timestamp" class="d-none"></span>
+                                        <span data-template-type="attribute" data-template-attribute="data-recipe_id"
+                                            data-template-value="recipe_id" class="d-none"></span>
+                                        <span data-template-type="attribute" data-template-attribute="data-email"
+                                            data-template-value="email" class="d-none"></span>
+                                    </div>
+                                    <div class="review-delete" data-template-type="attribute"
+                                        data-template-attribute="data-bs-recipe" data-template-value="recipe"
+                                        data-bs-toggle="modal" data-bs-target="#deleteReviewModal"
+                                        data-bs-recipe="Recipe Name">
+                                        <div class="w-100 h-100" data-bs-toggle="tooltip" data-bs-placement="top"
+                                            data-bs-title="Delete Review">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        </div>
+
+
+    </section>
+
+    <!-- link javascript -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+    <script type="module">
+
+    </script>
+
+
+
+</body>
+
+</html>

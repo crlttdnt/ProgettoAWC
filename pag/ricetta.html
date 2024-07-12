@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PGRC</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <!-- link css -->
+  <link rel="stylesheet" href="../css/style.css">
+
+  <!-- font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+
+</head>
+
+<body class="overflow-x-hidden">
+
+  <header>
+
+    <!-- Navigation -->
+    <div class="container-xl mx-auto pt-4">
+      <div class="bg-light rounded-3 position-relative">
+        <nav class="navbar navbar-expand-lg bg-body-primary">
+          <button class="navbar-toggler bg-white ms-auto me-3" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse px-4" id="navbarNav">
+            <div class="d-flex me-3">
+              <a href="#">
+                <img src="../img/logo.png" alt="PGRC" height="50">
+              </a>
+            </div>
+            <ul class="navbar-nav d-flex justify-content-between align-items-center w-100 m-0 gap-4">
+              <li class="nav-item">
+                <a class="nav-link text-uppercase fs-6" href="">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-uppercase fs-6" href="pag/ricerca.html">recipes</a>
+              </li>
+              <li class="loggato d-none nav-item">
+                <a class="nav-link text-uppercase fs-6" href="pag/account.html">My
+                  cookbook</a>
+              </li>
+              <li class="nav-item flex-grow-1">
+                <form class="d-flex w-100" role="search" action="pag/ricerca.html">
+                  <input class="form-control me-2 focus-ring focus-ring-light w-100" type="search" name="search"
+                    id="search" placeholder="Search" aria-label="Search">
+                  <button type="submit" class="btn btn-outline-light me-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                      class="bi bi-search" viewBox="0 0 16 16">
+                      <path
+                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                    </svg>
+                  </button>
+                  <a class="loggato d-none btn btn-outline-light" href="pag/account.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                      class="bi bi-person" viewBox="0 0 20 20">
+                      <path
+                        d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z" />
+                    </svg>
+                  </a>
+                </form>
+              </li>
+              <li class="nav-item">
+                <a class="non-loggato btn btn-dark" data-bs-toggle="modal" data-bs-target="#login">
+                  Log In
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="non-loggato btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#new-account"> Sign
+                  up
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+
+      </div>
+    </div>
+
+
+  </header>
+
+
+  <section class="container-xl mx-auto my-5">
+
+    <div class="container-xxl my-5 py-3 d-flex justify-content-center">
+
+      <div class="bg-light px-5 py-4 rounded-5 shadow w-75">
+        <div class="d-flex gap-4">
+          <div>
+            <img src="https://www.themealdb.com/images/media/meals/qptpvt1487339892.jpg" width="500" class="d-block">
+          </div>
+          <div>
+            <div class="d-flex justify-content-between py-3">
+              <h4>Tandoori chicken</h4>
+              <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor"
+                class="bi bi-suit-heart" viewBox="0 0 16 16">
+                <path
+                  d="m8 6.236-.894-1.789c-.222-.443-.607-1.08-1.152-1.595C5.418 2.345 4.776 2 4 2 2.324 2 1 3.326 1 4.92c0 1.211.554 2.066 1.868 3.37.337.334.721.695 1.146 1.093C5.122 10.423 6.5 11.717 8 13.447c1.5-1.73 2.878-3.024 3.986-4.064.425-.398.81-.76 1.146-1.093C14.446 6.986 15 6.131 15 4.92 15 3.326 13.676 2 12 2c-.777 0-1.418.345-1.954.852-.545.515-.93 1.152-1.152 1.595zm.392 8.292a.513.513 0 0 1-.784 0c-1.601-1.902-3.05-3.262-4.243-4.381C1.3 8.208 0 6.989 0 4.92 0 2.755 1.79 1 4 1c1.6 0 2.719 1.05 3.404 2.008.26.365.458.716.596.992a7.6 7.6 0 0 1 .596-.992C9.281 2.049 10.4 1 12 1c2.21 0 4 1.755 4 3.92 0 2.069-1.3 3.288-3.365 5.227-1.193 1.12-2.642 2.48-4.243 4.38z" />
+              </svg>
+            </div>
+            <p>Category: <span>Chicken</span></p>
+            <p>Area: <span>Indian</span></p>
+            <p> Preparation: <br>
+              Mix the lemon juice with the paprika and red onions in a large shallow dish.
+              Slash each chicken thigh three times, then turn them in the juice and set aside
+              for 10 mins.\r\nMix all of the marinade ingredients together and pour over the
+              chicken. Give everything a good mix, then cover and chill for at least 1 hr.
+              This can be done up to a day in advance.\r\nHeat the grill. Lift the chicken
+              pieces onto a rack over a baking tray. Brush over a little oil and grill for 8
+              mins on each side or until lightly charred and completely cooked through.
+            </p>
+          </div>
+        </div>
+        <div>
+          <h5>Ingredients:</h5>
+
+          <div class="row text-center w-100 justify-content-center">
+
+            <div class="col flex-nowrap d-flex align-items-center justify-content-center">
+              <a href="#" class="ingredient_link d-flex align-items-center justify-content-center">
+                <img class="ingredient_img" src="https://www.themealdb.com/images/ingredients/Lime-Small.png" alt=""
+                  width="65px">
+                <h5 class="ingredient_name">1 lime</h5>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-5">
+          <!-- Difficoltà -->
+          <div class="col-6 mx-auto fit-content">
+            <label for="difficoltà" class="form-label text-uppercase fw-medium">Difficulty</label>
+            <div class="container d-flex align-items-center" id="difficoltà">
+              <h3 id="diff_text" class="fw-medium fs-4 me-3 p-0 m-0">3.5</h3>
+              <img width="30" src="../img/chef.png" alt="" class="tint-primary" style="transform:translateY(-2px)">
+            </div>
+          </div>
+          <!-- Gusto -->
+          <div class="col-6 mx-auto fit-content">
+            <label for="gusto" class="form-label text-uppercase fw-medium">Taste</label>
+            <div class="container d-flex" id="gusto">
+              <h3 id="taste_text" class="fw-medium fs-4 me-3 p-0 m-0">3.5</h3>
+              <img width="30" src="../img/star.png" alt="" style="transform:translateY(-4px)">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </section>
+
+  <section class="container-xl mx-auto my-5">
+
+    <div class="container-xxl my-5 py-3 d-flex justify-content-center">
+
+      <div class="bg-light px-5 py-4 rounded-5 shadow w-75">
+        <!-- Form Recensione -->
+        <div class="card m-3 p-3 rounded-5 shadow border-0 w-100 logged-in-only" style="max-width: 900px;">
+          <div class="row">
+            <div class="col-md-11">
+              <div class="card-body">
+                <form action="recipe.html" name="review_form" onsubmit="return validateAndPublishReview(this)">
+                  <div class="row pe-4">
+                    <input name="content" id="review_content"
+                      class="w-100 border-0 border-bottom border-2 border-black ps-1" type="text"
+                      placeholder="Leave a review on this recipe..." onclick="showReviewForm()">
+                  </div>
+                  <div class="">
+                    <div class="row mt-4 mb-3">
+                      <div class="col-md-4 d-flex flex-column ps-0">
+                        <div class="d-flex align-items-center">
+                          <label class="mb-0" for="review_taste">Taste:</label>
+                          <input class="form-control m-0 border-0 w-fit" type="number" name="taste" id="review_taste"
+                            min="1" max="5" onchange="voteTaste(this.value, true)" required>
+                        </div>
+                        <div class="review-taste-input | review-score" style="cursor:pointer"
+                          onmouseover="voteTaste(event.target.getAttribute('data-value'), false)"
+                          onclick="voteTasteAndLock(event.target.getAttribute('data-value'))">
+                          <img width="25" src="../img/chef.png" alt="">
+                          <img width="25" src="../img/chef.png" alt="">
+                          <img width="25" src="../img/chef.png" alt="">
+                          <img width="25" src="../img/chef.png" alt="">
+                          <img width="25" src="../img/chef.png" alt="">
+                        </div>
+                      </div>
+                      <div class="col-md-4 d-flex flex-column ps-0">
+                        <div class="d-flex align-items-center">
+                          <label class="mb-0" for="review_difficulty">Difficulty:</label>
+                          <input class="form-control m-0 border-0 w-fit" type="number" name="difficulty"
+                            id="review_difficulty" min="1" max="5" onchange="voteDifficulty(this.value, true)" required>
+                        </div>
+                        <div class="review-difficulty-input | review-score" style="cursor:pointer"
+                          onmouseover="voteDifficulty(event.target.getAttribute('data-value'), false)"
+                          onclick="voteDifficultyAndLock(event.target.getAttribute('data-value'))">
+                          <img width="25" src="../img/star.png" alt="" class="tint-black">
+                          <img width="25" src="../img/star.png" alt="" class="tint-black">
+                          <img width="25" src="../img/star.png" alt="" class="tint-black">
+                          <img width="25" src="../img/star.png" alt="" class="tint-black">
+                          <img width="25" src="../img/star.png" alt="" class="tint-black">
+                        </div>
+                      </div>
+                      <div class="col-md-4 d-flex flex-column ps-0">
+                        <label class="mb-0" for="preparation_date">Preparation Date</label>
+                        <input class="form-control border border-2 border-black fs-5" type="date" name="date"
+                          id="preparation_date" required>
+                      </div>
+                    </div>
+                    <input class="keep-param" type="hidden" name="id" value="">
+                    <div class="d-flex justify-content-end gap-3">
+                      <button class="btn btn-outline-dark" type="button" onclick="closeReviewForm()">Cancel</button>
+                      <input class="btn btn-dark border-0" type="submit" value="Publish">
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recensione -->
+        <div class="review-card | card m-3 p-3 rounded-5 shadow border-0 w-100" style="max-width: 900px;"
+          data-template-type="attribute" data-template-attribute="data-my-review" data-template-value="my_review"
+          data-my-review="false">
+          <div class="row">
+            <div class="col-md-3">
+              <div class="card-body">
+                <!-- Username & Picture -->
+                <div class="d-flex align-items-center gap-2">
+                  <p data-template-type="content" data-template-value="author" class="card-text">Username</p>
+                </div>
+                <!-- Taste -->
+                <div data-template-type="element" data-template-value="taste">
+                  <div>
+                    <p class="card-text my-0 pt-3">
+                      Taste:
+                    </p>
+                    <div class="review-score">
+                      <img data-template-type="attribute" data-template-attribute="class" data-template-value="1"
+                        width="25" src="../img/star.png" alt="Taste Score">
+                      <img data-template-type="attribute" data-template-attribute="class" data-template-value="2"
+                        width="25" src="../img/star.png" alt="Taste Score">
+                      <img data-template-type="attribute" data-template-attribute="class" data-template-value="3"
+                        width="25" src="../img/star.png" alt="Taste Score">
+                      <img data-template-type="attribute" data-template-attribute="class" data-template-value="4"
+                        width="25" src="../img/star.png" alt="Taste Score">
+                      <img data-template-type="attribute" data-template-attribute="class" data-template-value="5"
+                        width="25" src="../img/star.png" alt="Taste Score">
+                    </div>
+                  </div>
+                </div>
+                <!-- Difficulty -->
+                <div data-template-type="element" data-template-value="difficulty">
+                  <div>
+                    <p class="card-text my-0 pt-3">
+                      Difficulty:
+                    </p>
+                    <div class="review-score">
+                      <img data-template-type="attribute" data-template-attribute="class" data-template-value="1"
+                        width="25" src="../img/chef.png" alt="Difficulty Score">
+                      <img data-template-type="attribute" data-template-attribute="class" data-template-value="2"
+                        width="25" src="../img/chef.png" alt="Difficulty Score">
+                      <img data-template-type="attribute" data-template-attribute="class" data-template-value="3"
+                        width="25" src="../img/chef.png" alt="Difficulty Score">
+                      <img data-template-type="attribute" data-template-attribute="class" data-template-value="4"
+                        width="25" src="../img/chef.png" alt="Difficulty Score">
+                      <img data-template-type="attribute" data-template-attribute="class" data-template-value="5"
+                        width="25" src="../img/chef.png" alt="Difficulty Score">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-9">
+              <div class="card-body">
+                <!-- Review Date -->
+                <p class="text-secondary mb-2">
+                  <span data-template-type="content" data-template-value="date">mm-dd-yyyy</span>
+                </p>
+                <!-- Review Content -->
+                <p data-template-type="content" data-template-value="content" class="card-text fs-5">Lorem ipsum dolor
+                  sit
+                  amet
+                  consectetur adipisicing elit. Sunt quisquam ratione
+                  iure laboriosam ipsam, nesciunt pariatur ullam eius saepe blanditiis.
+                </p>
+              </div>
+            </div>
+            <!-- Review Metadata -->
+            <span data-template-type="attribute" data-template-attribute="data-timestamp"
+              data-template-value="timestamp" class="d-none"></span>
+            <span data-template-type="attribute" data-template-attribute="data-recipe_id"
+              data-template-value="recipe_id" class="d-none"></span>
+            <span data-template-type="attribute" data-template-attribute="data-email" data-template-value="email"
+              class="d-none"></span>
+          </div>
+          <div class="review-delete" data-template-type="attribute" data-template-attribute="data-bs-recipe"
+            data-template-value="recipe" data-bs-toggle="modal" data-bs-target="#deleteReviewModal"
+            data-bs-recipe="Recipe Name">
+            <div class="w-100 h-100" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Delete Review">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </section>
+
+  <!-- link javascript -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+    integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+    crossorigin="anonymous"></script>
+  <script type="module">
+
+  </script>
+
+
+
+</body>
+
+</html>
