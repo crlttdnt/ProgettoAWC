@@ -97,7 +97,7 @@
       <div class="bg-light px-5 py-4 rounded-5 shadow w-75">
         <div class="d-xl-flex gap-4">
           <div>
-            <img src="https://www.themealdb.com/images/media/meals/qptpvt1487339892.jpg" width="500" class="d-block">
+            <img class="recipe_img" src="https://www.themealdb.com/images/media/meals/qptpvt1487339892.jpg" width="500" class="d-block">
           </div>
           <div>
             <div class="d-flex justify-content-between py-3">
@@ -111,19 +111,19 @@
             <p>Category: <span class="category_name">Category</span></p>
             <p>Area: <span class="area_name">Area</span></p>
             <p> Preparation: </p>
-              <p class="preparation"> Instructions
-              </p>
-           
+            <p class="preparation overflow-y-auto" style="max-height: 14lh;"> Instructions
+            </p>
+
           </div>
         </div>
         <div>
           <div class="ingredient_container row text-center w-100 justify-content-center">
-          <h5>Ingredients:</h5>
-            <div class="ingredient_item col flex-nowrap d-flex align-items-center justify-content-center">
-              <a href="#" class="ingredient_link d-flex align-items-center justify-content-center">
+            <h5>Ingredients:</h5>
+            <div class="ingredient_item col-3 flex-nowrap d-flex align-items-center justify-content-center mx-3 my-2">
+              <a href="#" class="ingredient_link d-flex align-items-center justify-content-center gap-2">
                 <img class="ingredient_img" src="https://www.themealdb.com/images/ingredients/Lime-Small.png" alt=""
                   width="65px">
-                <h5>
+                <h5 class="text-start">
                   <span class="ingredient_name"> Name </span>
                   <span class="ingredient_measure"> Measure </span>
                 </h5>
@@ -405,46 +405,38 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
     integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
     crossorigin="anonymous"></script>
-    
-    <script src="../js/api.js"></script>
-    <script src="../js/utils.js"></script>
-    <script type="module">
-      
-        let recipe = await getById(52840);
-        document.querySelector(".recipe_title").textContent=recipe.strMeal;
-        
-        console.log(recipe);
 
-        let category = await getById(52840);
-        document.querySelector(".category_name").textContent=category.strArea;
-    
-        let area = await getById(52840);
-        document.querySelector(".area_name").textContent=category.strCategory;
-    
-        let preparation = await getById(52840);
-        document.querySelector(".preparation").textContent=preparation.strInstructions;
-    
-  
-        let ingredient_container = document.querySelector(".ingredient_container");
-        let ingredient_template = document.querySelector(".ingredient_item");
+  <script src="../js/api.js"></script>
+  <script src="../js/utils.js"></script>
+  <script type="module">
 
-        let ingredients =  extractIngredients(recipe);
-        console.log(ingredients);
+    let recipe = await getById(getURLParam("id"));
+    document.querySelector(".recipe_title").textContent = recipe.strMeal;
+    document.querySelector(".category_name").textContent = recipe.strArea;
+    document.querySelector(".area_name").textContent = recipe.strCategory;
+    document.querySelector(".preparation").textContent = recipe.strInstructions;
+    document.querySelector(".recipe_img").src = recipe.strMealThumb;
 
-        for (let ingredient of ingredients) {
-            let ingredient_item = ingredient_template.cloneNode(true);
-            ingredient_item.querySelector(".ingredient_name").textContent = ingredient.name;
-            ingredient_item.querySelector(".ingredient_measure").textContent = ingredient.measure;
-            ingredient_item.querySelector(".ingredient_img").src = "https://www.themealdb.com/images/ingredients/" + ingredient.name + "-Small.png";
-            ingredient_container.appendChild(ingredient_item);
-        }
+    let ingredient_container = document.querySelector(".ingredient_container");
+    let ingredient_template = document.querySelector(".ingredient_item");
 
-      
+    let ingredients = extractIngredients(recipe);
+    console.log(ingredients);
+
+    for (let ingredient of ingredients) {
+      let ingredient_item = ingredient_template.cloneNode(true);
+      ingredient_item.querySelector(".ingredient_name").textContent = ingredient.name;
+      ingredient_item.querySelector(".ingredient_measure").textContent = ingredient.measure;
+      ingredient_item.querySelector(".ingredient_img").src = "https://www.themealdb.com/images/ingredients/" + ingredient.name + "-Small.png";
+      ingredient_container.appendChild(ingredient_item);
+    }
 
 
 
-        
-    </script>
+
+
+
+  </script>
 
 
 
