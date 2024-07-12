@@ -108,27 +108,25 @@
                   d="m8 6.236-.894-1.789c-.222-.443-.607-1.08-1.152-1.595C5.418 2.345 4.776 2 4 2 2.324 2 1 3.326 1 4.92c0 1.211.554 2.066 1.868 3.37.337.334.721.695 1.146 1.093C5.122 10.423 6.5 11.717 8 13.447c1.5-1.73 2.878-3.024 3.986-4.064.425-.398.81-.76 1.146-1.093C14.446 6.986 15 6.131 15 4.92 15 3.326 13.676 2 12 2c-.777 0-1.418.345-1.954.852-.545.515-.93 1.152-1.152 1.595zm.392 8.292a.513.513 0 0 1-.784 0c-1.601-1.902-3.05-3.262-4.243-4.381C1.3 8.208 0 6.989 0 4.92 0 2.755 1.79 1 4 1c1.6 0 2.719 1.05 3.404 2.008.26.365.458.716.596.992a7.6 7.6 0 0 1 .596-.992C9.281 2.049 10.4 1 12 1c2.21 0 4 1.755 4 3.92 0 2.069-1.3 3.288-3.365 5.227-1.193 1.12-2.642 2.48-4.243 4.38z" />
               </svg>
             </div>
-            <p>Category: <span>Chicken</span></p>
-            <p>Area: <span>Indian</span></p>
-            <p> Preparation: <br>
-              Mix the lemon juice with the paprika and red onions in a large shallow dish.
-              Slash each chicken thigh three times, then turn them in the juice and set aside
-              for 10 mins.\r\nMix all of the marinade ingredients together and pour over the
-              chicken. Give everything a good mix, then cover and chill for at least 1 hr.
-              This can be done up to a day in advance.\r\nHeat the grill. Lift the chicken
-              pieces onto a rack over a baking tray. Brush over a little oil and grill for 8
-              mins on each side or until lightly charred and completely cooked through.
-            </p>
+            <p>Category: <span class="category_name">Category</span></p>
+            <p>Area: <span class="area_name">Area</span></p>
+            <p> Preparation: </p>
+              <p class="preparation"> Instructions
+              </p>
+           
           </div>
         </div>
         <div>
-          <div class="row text-center w-100 justify-content-center">
+          <div class="ingredient_container row text-center w-100 justify-content-center">
           <h5>Ingredients:</h5>
-            <div class="ingredient_container col flex-nowrap d-flex align-items-center justify-content-center">
+            <div class="ingredient_item col flex-nowrap d-flex align-items-center justify-content-center">
               <a href="#" class="ingredient_link d-flex align-items-center justify-content-center">
                 <img class="ingredient_img" src="https://www.themealdb.com/images/ingredients/Lime-Small.png" alt=""
                   width="65px">
-                <h5 class="ingredient_name d-none">1 lime</h5>
+                <h5>
+                  <span class="ingredient_name"> Name </span>
+                  <span class="ingredient_measure"> Measure </span>
+                </h5>
               </a>
             </div>
           </div>
@@ -409,26 +407,39 @@
     crossorigin="anonymous"></script>
     
     <script src="../js/api.js"></script>
+    <script src="../js/utils.js"></script>
     <script type="module">
       
         let recipe = await getById(52840);
         document.querySelector(".recipe_title").textContent=recipe.strMeal;
         
-        consol.log(recipe);
-      
-      
+        console.log(recipe);
 
+        let category = await getById(52840);
+        document.querySelector(".category_name").textContent=category.strArea;
+    
+        let area = await getById(52840);
+        document.querySelector(".area_name").textContent=category.strCategory;
+    
+        let preparation = await getById(52840);
+        document.querySelector(".preparation").textContent=preparation.strInstructions;
+    
+  
         let ingredient_container = document.querySelector(".ingredient_container");
-        let ingredient_template = document.querySelector(".ingredient_name");
+        let ingredient_template = document.querySelector(".ingredient_item");
 
-        let ingredients = await getById();
+        let ingredients =  extractIngredients(recipe);
+        console.log(ingredients);
 
         for (let ingredient of ingredients) {
-            let ingredient_name = ingredient_template.cloneNode(true);
-            ingredients_name.classList.remove("d-none");
-            area_item.querySelector(".area_name").textContent = area.strArea;
-            area_container.appendChild(area_item);
+            let ingredient_item = ingredient_template.cloneNode(true);
+            ingredient_item.querySelector(".ingredient_name").textContent = ingredient.name;
+            ingredient_item.querySelector(".ingredient_measure").textContent = ingredient.measure;
+            ingredient_item.querySelector(".ingredient_img").src = "https://www.themealdb.com/images/ingredients/" + ingredient.name + "-Small.png";
+            ingredient_container.appendChild(ingredient_item);
         }
+
+      
 
 
 
