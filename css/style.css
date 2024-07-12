@@ -3,8 +3,9 @@
 }
 
 body {
-    background-color: rgb(135, 32, 23);
+    background-color: rgb(226 149 112);
 }
+
 a {
     text-decoration: none;
     color: inherit;
@@ -15,7 +16,7 @@ a {
 }
 
 .color-first {
-    background-color: #afda5c;
+    background-color: rgb(226 149 112);
 }
 
 
@@ -155,7 +156,7 @@ a {
     transform: translate(-50%, -50%);
     font-size: 1.2rem;
     padding: 0.4rem 0.7rem;
-    background-color: #afda5c;
+    background-color: rgb(226 149 112);
     border-radius: 0.5rem;
     z-index: 99;
     text-transform: uppercase;
@@ -168,7 +169,7 @@ a {
     transform: translate(-50%, -50%);
     font-size: 1.2rem;
     padding: 0.4rem 0.7rem;
-    background-color: #afda5c;
+    background-color: rgb(226 149 112);
     border-radius: 0.5rem;
     z-index: 99;
     text-transform: uppercase;
