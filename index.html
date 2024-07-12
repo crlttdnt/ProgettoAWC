@@ -137,28 +137,32 @@
                 <div id="carouselSuggestions" class="carousel slide">
                     <div class="carousel-inner">
                         <div class="carousel-item d-none">
-                            <div class="d-xl-flex gap-4">
-                                <div>
-                                    <img class="carousel_img" src=""
-                                        width="500" class="d-block">
+                            <a href="">
+                                <div class="d-xl-flex gap-4">
+                                    <div>
+                                        <img class="carousel_img" src="" width="500" class="d-block">
+                                    </div>
+                                    <div>
+                                        <p>
+                                        <h4 class="carousel_name">Tandoori chicken</h4>
+                                        </p>
+                                        <p>Category: <span class="carousel_category">Chicken</span></p>
+                                        <p>Area: <span class="carousel_area">Indian</span></p>
+                                        <p class="carousel_preparation">
+                                            Mix the lemon juice with the paprika and red onions in a large shallow dish.
+                                            Slash each chicken thigh three times, then turn them in the juice and set
+                                            aside
+                                            for 10 mins.\r\nMix all of the marinade ingredients together and pour over
+                                            the
+                                            chicken. Give everything a good mix, then cover and chill for at least 1 hr.
+                                            This can be done up to a day in advance.\r\nHeat the grill. Lift the chicken
+                                            pieces onto a rack over a baking tray. Brush over a little oil and grill for
+                                            8
+                                            mins on each side or until lightly charred and completely cooked through.
+                                        </p>
+                                    </div>
                                 </div>
-                                <div>
-                                    <p>
-                                    <h4 class="carousel_name">Tandoori chicken</h4>
-                                    </p>
-                                    <p>Category: <span class="carousel_category">Chicken</span></p>
-                                    <p>Area: <span class="carousel_area">Indian</span></p>
-                                    <p class="carousel_preparation">
-                                        Mix the lemon juice with the paprika and red onions in a large shallow dish.
-                                        Slash each chicken thigh three times, then turn them in the juice and set aside
-                                        for 10 mins.\r\nMix all of the marinade ingredients together and pour over the
-                                        chicken. Give everything a good mix, then cover and chill for at least 1 hr.
-                                        This can be done up to a day in advance.\r\nHeat the grill. Lift the chicken
-                                        pieces onto a rack over a baking tray. Brush over a little oil and grill for 8
-                                        mins on each side or until lightly charred and completely cooked through.
-                                    </p>
-                                </div>
-                            </div>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -257,7 +261,7 @@
             </div>
         </div>
     </div>
-    
+
     <!-- Modal new account -->
     <div class="modal fade" id="new-account" tabindex="-1" aria-labelledby="new-account" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
@@ -391,6 +395,7 @@
             let categories_item = categories_template.cloneNode(true);
             categories_item.classList.remove("d-none");
             categories_item.querySelector(".category_name").textContent = category.strCategory;
+            categories_item.querySelector(".category_name").href = "pag/ricerca.html?category=" + category.strCategory;
             categories_container.appendChild(categories_item);
         }
 
@@ -404,6 +409,7 @@
             let area_item = area_template.cloneNode(true);
             area_item.classList.remove("d-none");
             area_item.querySelector(".area_name").textContent = area.strArea;
+            area_item.querySelector(".area_name").href = "pag/ricerca.html?area=" + area.strArea;
             area_container.appendChild(area_item);
         }
 
@@ -412,11 +418,11 @@
 
         let recipes = [];
 
-        for(let i = 0; i < 3; i++) {
+        for (let i = 0; i < 3; i++) {
             recipes.push(await getRandomRecipe());
         }
 
-        for(let [index, recipe] of recipes.entries()) {
+        for (let [index, recipe] of recipes.entries()) {
             let carousel_item = carousel_template.cloneNode(true);
             carousel_item.classList.remove("d-none");
             if (index == 0) {
@@ -427,12 +433,13 @@
             carousel_item.querySelector(".carousel_category").textContent = recipe.strCategory;
             carousel_item.querySelector(".carousel_area").textContent = recipe.strArea;
             carousel_item.querySelector(".carousel_preparation").textContent = recipe.strInstructions.substr(0, 400) + "...";
+            carousel_item.querySelector("a").href = "pag/ricetta.html?id=" + recipe.idMeal;
             carousel_container.appendChild(carousel_item);
         }
         carousel_template.remove();
 
 
-        
+
     </script>
 
 
