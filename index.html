@@ -122,81 +122,33 @@
                         <h4 class="text-uppercase fs-3 fw-medium mb-0">Some inspiration</h4>
                         <div class="d-flex">
                             <button class="carousel-control-prev position-relative w-100" type="button"
-                                data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                                data-bs-target="#carouselSuggestions" data-bs-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                 <span class="visually-hidden">Previous</span>
                             </button>
                             <button class="carousel-control-next position-relative w-100" type="button"
-                                data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                                data-bs-target="#carouselSuggestions" data-bs-slide="next">
                                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                 <span class="visually-hidden">Next</span>
                             </button>
                         </div>
                     </div>
                 </div>
-                <div id="carouselExampleCaptions" class="carousel slide">
+                <div id="carouselSuggestions" class="carousel slide">
                     <div class="carousel-inner">
-                        <div class="carousel-item active">
+                        <div class="carousel-item d-none">
                             <div class="d-xl-flex gap-4">
                                 <div>
-                                    <img src="https://www.themealdb.com/images/media/meals/qptpvt1487339892.jpg"
+                                    <img class="carousel_img" src=""
                                         width="500" class="d-block">
                                 </div>
                                 <div>
                                     <p>
-                                    <h4>Tandoori chicken</h4>
+                                    <h4 class="carousel_name">Tandoori chicken</h4>
                                     </p>
-                                    <p>Category: <span>Chicken</span></p>
-                                    <p>Area: <span>Indian</span></p>
-                                    <p>
-                                        Mix the lemon juice with the paprika and red onions in a large shallow dish.
-                                        Slash each chicken thigh three times, then turn them in the juice and set aside
-                                        for 10 mins.\r\nMix all of the marinade ingredients together and pour over the
-                                        chicken. Give everything a good mix, then cover and chill for at least 1 hr.
-                                        This can be done up to a day in advance.\r\nHeat the grill. Lift the chicken
-                                        pieces onto a rack over a baking tray. Brush over a little oil and grill for 8
-                                        mins on each side or until lightly charred and completely cooked through.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="d-xl-flex gap-4">
-                                <div>
-                                    <img src="https://www.themealdb.com/images/media/meals/vc08jn1628769553.jpg"
-                                        width="500" class="d-block">
-                                </div>
-                                <div>
-                                    <p>
-                                    <h4>Tandoori chicken</h4>
-                                    </p>
-                                    <p>Category: <span>Chicken</span></p>
-                                    <p>Area: <span>Indian</span></p>
-                                    <p>
-                                        Mix the lemon juice with the paprika and red onions in a large shallow dish.
-                                        Slash each chicken thigh three times, then turn them in the juice and set aside
-                                        for 10 mins.\r\nMix all of the marinade ingredients together and pour over the
-                                        chicken. Give everything a good mix, then cover and chill for at least 1 hr.
-                                        This can be done up to a day in advance.\r\nHeat the grill. Lift the chicken
-                                        pieces onto a rack over a baking tray. Brush over a little oil and grill for 8
-                                        mins on each side or until lightly charred and completely cooked through.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="d-xl-flex gap-4">
-                                <div>
-                                    <img src="https://www.themealdb.com/images/media/meals/qxutws1486978099.jpg"
-                                        width="500" class="d-block">
-                                </div>
-                                <div>
-                                    <p>
-                                    <h4>Tandoori chicken</h4>
-                                    </p>
-                                    <p>Category: <span>Chicken</span></p>
-                                    <p>Area: <span>Indian</span></p>
-                                    <p>
+                                    <p>Category: <span class="carousel_category">Chicken</span></p>
+                                    <p>Area: <span class="carousel_area">Indian</span></p>
+                                    <p class="carousel_preparation">
                                         Mix the lemon juice with the paprika and red onions in a large shallow dish.
                                         Slash each chicken thigh three times, then turn them in the juice and set aside
                                         for 10 mins.\r\nMix all of the marinade ingredients together and pour over the
@@ -455,6 +407,29 @@
             area_container.appendChild(area_item);
         }
 
+        let carousel_container = document.querySelector(".carousel-inner");
+        let carousel_template = document.querySelector(".carousel-item");
+
+        let recipes = [];
+
+        for(let i = 0; i < 3; i++) {
+            recipes.push(await getRandomRecipe());
+        }
+
+        for(let [index, recipe] of recipes.entries()) {
+            let carousel_item = carousel_template.cloneNode(true);
+            carousel_item.classList.remove("d-none");
+            if (index == 0) {
+                carousel_item.classList.add("active");
+            }
+            carousel_item.querySelector(".carousel_img").src = recipe.strMealThumb;
+            carousel_item.querySelector(".carousel_name").textContent = recipe.strMeal;
+            carousel_item.querySelector(".carousel_category").textContent = recipe.strCategory;
+            carousel_item.querySelector(".carousel_area").textContent = recipe.strArea;
+            carousel_item.querySelector(".carousel_preparation").textContent = recipe.strInstructions.substr(0, 400) + "...";
+            carousel_container.appendChild(carousel_item);
+        }
+        carousel_template.remove();
 
 
         
