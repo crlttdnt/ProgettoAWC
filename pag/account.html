@@ -152,7 +152,7 @@
 
 
                                 <div class="d-flex justify-content-end">
-                                    <button data-bs-toggle="modal" class="btn btn-danger me-5"> Delete your
+                                    <button type="button" data-bs-toggle="modal" data-bs-target="#delete-account" class="btn btn-danger me-5"> Delete your
                                         account</button>
                                     <button type="reset" class="btn btn-outline-dark me-2" onclick="logout()">Log
                                         out</button>
@@ -183,29 +183,45 @@
                             <div id="ricettario_container"
                                 class="d-flex gap-3 justify-content-center flex-column align-items-center">
                                 <!-- Ricetta del Ricettario -->
-                                <div class="ricettario_template d-none card m-3 p-3 rounded-5 border-1 w-100" style="max-width: 900px;"
-                                    data-template-type="attribute" data-template-attribute="data-my-review"
-                                    data-template-value="my_review" data-my-review="false">
+                                <div class="ricettario_template d-none card m-3 p-3 rounded-5 border-1 w-100"
+                                    style="max-width: 900px;" data-template-type="attribute"
+                                    data-template-attribute="data-my-review" data-template-value="my_review"
+                                    data-my-review="false">
                                     <div class="row">
                                         <div class="col-md-3">
                                             <div class="card-body">
                                                 <div class="d-flex align-items-center gap-2">
-                                                    <img src=""
-                                                        class=" ricetta-img card-img card-img-top w-100" alt="...">
+                                                    <a class="ricetta-link">
+                                                        <img src="" class=" ricetta-img card-img card-img-top w-100"
+                                                            alt="...">
+                                                    </a>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-md-9">
                                             <div class="card-body">
-                                                <h4 class="ricetta-nome mb-2">
-                                                    Nome della Ricetta
-                                                </h4>
+                                                <div class="d-flex justify-content-between">
+                                                    <h4 class="ricetta-nome mb-2">
+                                                        Nome della Ricetta
+                                                    </h4><a class="loggato d-none btn btn-outline-dark card-save"
+                                                        data-bs-toggle="modal" data-bs-target="#recipe-note"
+                                                        style="height: fit-content;">
+                                                        <i class="fas fa-heart fs-4"></i>
+                                                    </a>
+                                                </div>
                                                 <p class="mb-0 pb-0">
                                                     Nota:
                                                 </p>
-                                                <p class="ricetta-nota fs-5">
-                                                    Ciao prova
-                                                </p>
+                                                <textarea
+                                                    class="ricetta-nota fs-5 w-100 rounded-5 border-2 ps-3 pe-5 py-2 mt-2"
+                                                    id="" rows="4" style="resize: none" disabled></textarea>
+                                                <div class="d-flex justify-content-end">
+                                                    <button type="submit"
+                                                        class="save_note_button d-none btn btn-success me-2"
+                                                        onclick="saveNote(this.parentElement.parentElement)">Save</button>
+                                                    <button type="button" class="edit_note_button btn btn-success me-2"
+                                                        onclick="enableNoteEdit(this.parentElement.parentElement)">Edit</button>
+                                                </div>
                                             </div>
                                         </div>
                                         <!-- Review Metadata -->
@@ -258,6 +274,63 @@
         </div>
     </section>
 
+    <!-- Modals -->
+
+    <!-- Modal recipe note -->
+    <div class="modal fade" id="recipe-note" tabindex="-1" aria-labelledby="recipe-note" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-body-dark">
+                    <h3 class="modal-title fs-4 fw-medium non-loggato">Log in to save your favourite recipes!</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body ">
+                    <div class="form-floating ">
+                        <textarea class="form-control" placeholder="Scrivi la tua nota" id="note-text"
+                            style="height: 100px"></textarea>
+                        <label for="note-text">Leave here a comment for this recipe...</label>
+                    </div>
+
+                    <div class=" d-flex justify-content-end mt-4">
+                        <button type="submit" class="save-recipe btn btn-dark loggato d-none" onclick="saveRecipe(this)"
+                            data-bs-dismiss="modal" aria-label="Close">Add to your cookbook</button>
+                        <button type="submit" class="save-recipe btn btn-dark non-loggato " data-bs-dismiss="modal"
+                            aria-label="Close" disabled>Add to your cookbook</button>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    
+
+    <!-- Modal eliminare account -->
+    <div class="modal fade" id="delete-account" tabindex="-1" aria-labelledby="delete-account" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-body-dark">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class=" text-center mt-3">
+
+                        <h4 class="fs-5">If you delete your account all of your data will be deleted too</h4>
+                        <h4 class=" fs-4 text-danger  text-uppercase">Are you sure?</h4>
+
+                    </div>
+                    <div class="d-flex justify-content-center mt-3">
+                        <form action="../index.html" onsubmit="cancellaUtente()">
+                            <button type="submit" class="btn btn-outline-danger">Delete</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <!-- link javascript -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
@@ -273,39 +346,37 @@
 
         let dati_utente = getUtenteLoggato();
 
-        console.log(dati_utente);
-
         document.querySelector("#utente-email").textContent = dati_utente.email;
         document.querySelector("#utente-nome>input").value = dati_utente.nome;
         document.querySelector("#utente-cognome>input").value = dati_utente.cognome;
         document.querySelector("#utente-data>input").value = dati_utente.data;
         document.querySelector("#utente-password>input").value = dati_utente.password;
-        
-        console.log(dati_utente.cookbook);
-        
+
+
         let ricettario_container = document.querySelector("#ricettario_container");
         let ricettario_template = document.querySelector(".ricettario_template");
-        
 
 
+        let ricette_in_ordine = dati_utente.cookbook.sort((r1, r2) => r2.timestamp - r1.timestamp);
 
-        for (let ricetta of dati_utente.cookbook) { //ricetta: id e text
+        for (let ricetta of ricette_in_ordine) { //ricetta: id e text
             let ricetta_item = ricettario_template.cloneNode(true);
             ricetta_item.classList.remove("d-none");
-            ricetta_item.querySelector(".ricetta-nota").textContent = ricetta.text;  
+            ricetta_item.querySelector(".ricetta-nota").textContent = ricetta.text;
 
             let recipe = await getById(ricetta.id);
 
-            console.log(recipe);
-
-            ricetta_item.querySelector(".ricetta-nome").textContent = recipe.strMeal; 
-            ricetta_item.querySelector(".ricetta-img").src = recipe.strMealThumb;            ; 
+            ricetta_item.querySelector(".ricetta-nome").textContent = recipe.strMeal;
+            ricetta_item.querySelector(".ricetta-img").src = recipe.strMealThumb;
+            ricetta_item.querySelector(".ricetta-link").href = "ricetta.html?id=" + recipe.idMeal;
+            ricetta_item.querySelector(".save_note_button").setAttribute("data-id", recipe.idMeal);
+            ricetta_item.querySelector(".card-save").setAttribute("data-recipe", recipe.idMeal)
 
             ricettario_container.appendChild(ricetta_item);
         }
 
 
-    
+
 
     </script>
 

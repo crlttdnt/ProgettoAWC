@@ -75,6 +75,8 @@ function addToCookbook(recipe) {
     let utenti_attuali = JSON.parse(localStorage.getItem("utenti"));
     let email = sessionStorage.getItem("utente_loggato");
 
+    recipe.timestamp = Date.now();
+
     for (let i = 0; i < utenti_attuali.length; i++) {
         if (utenti_attuali[i].email == email) {
 
@@ -136,7 +138,6 @@ function remReview(recipe_id, review_date, review_text) {
     localStorage.setItem("recensioni", JSON.stringify(reviews));
     location.reload();
 }
-
 
 function getUserReviews() {
     let email = sessionStorage.getItem("utente_loggato")

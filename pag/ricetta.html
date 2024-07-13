@@ -167,21 +167,23 @@
 
   </section>
 
+  <!-- Recensioni -->
   <section class="container-xl mx-auto my-5">
 
     <div class="container-xxl my-5 py-3 d-flex justify-content-center">
 
       <div class="bg-light px-5 py-4 rounded-5 shadow w-75">
+
         <!-- Form Recensione -->
         <div class="card m-3 p-3 rounded-5 shadow border-0 logged-in-only" style="max-width: 900px;">
           <div class="row">
             <div class="col-md-11">
               <div class="card-body">
-                <form action="recipe.html" name="review_form" onsubmit="return validateAndPublishReview(this)">
+                <form action="ricetta.html" name="review_form" onsubmit="return controllaERegistraRecensione(this)">
                   <div class="row pe-4">
                     <input name="content" id="review_content"
                       class="w-100 border-0 border-bottom border-2 border-black ps-1" type="text"
-                      placeholder="Leave a review on this recipe..." onclick="showReviewForm()">
+                      placeholder="Leave a review on this recipe...">
                   </div>
                   <div class="">
                     <div class="row mt-4 mb-3">
@@ -189,32 +191,28 @@
                         <div class="d-flex align-items-center">
                           <label class="mb-0" for="review_taste">Taste:</label>
                           <input class="form-control m-0 border-0 w-fit" type="number" name="taste" id="review_taste"
-                            min="1" max="5" onchange="voteTaste(this.value, true)" required>
+                            min="1" max="5" onchange="voteTaste(this.value)" value="1" required>
                         </div>
-                        <div class="review-taste-input | review-score" style="cursor:pointer"
-                          onmouseover="voteTaste(event.target.getAttribute('data-value'), false)"
-                          onclick="voteTasteAndLock(event.target.getAttribute('data-value'))">
-                          <img width="25" src="../img/chef.png" alt="">
-                          <img width="25" src="../img/chef.png" alt="">
-                          <img width="25" src="../img/chef.png" alt="">
-                          <img width="25" src="../img/chef.png" alt="">
-                          <img width="25" src="../img/chef.png" alt="">
+                        <div class="review-taste-input | review-score" style="cursor:pointer">
+                          <img width="25" src="../img/star.png" alt="">
+                          <img width="25" class="tint-black" src="../img/star.png" alt="">
+                          <img width="25" class="tint-black" src="../img/star.png" alt="">
+                          <img width="25" class="tint-black" src="../img/star.png" alt="">
+                          <img width="25" class="tint-black" src="../img/star.png" alt="">
                         </div>
                       </div>
                       <div class="col-md-4 d-flex flex-column ps-0">
                         <div class="d-flex align-items-center">
                           <label class="mb-0" for="review_difficulty">Difficulty:</label>
                           <input class="form-control m-0 border-0 w-fit" type="number" name="difficulty"
-                            id="review_difficulty" min="1" max="5" onchange="voteDifficulty(this.value, true)" required>
+                            id="review_difficulty" min="1" max="5" value="1" onchange="voteDifficulty(this.value)" required>
                         </div>
-                        <div class="review-difficulty-input | review-score" style="cursor:pointer"
-                          onmouseover="voteDifficulty(event.target.getAttribute('data-value'), false)"
-                          onclick="voteDifficultyAndLock(event.target.getAttribute('data-value'))">
-                          <img width="25" src="../img/star.png" alt="" class="tint-black">
-                          <img width="25" src="../img/star.png" alt="" class="tint-black">
-                          <img width="25" src="../img/star.png" alt="" class="tint-black">
-                          <img width="25" src="../img/star.png" alt="" class="tint-black">
-                          <img width="25" src="../img/star.png" alt="" class="tint-black">
+                        <div class="review-difficulty-input | review-score" style="cursor:pointer">
+                          <img width="25" class="tint-primary"  src="../img/chef.png" alt="">
+                          <img width="25" src="../img/chef.png" alt="">
+                          <img width="25" src="../img/chef.png" alt="">
+                          <img width="25" src="../img/chef.png" alt="">
+                          <img width="25" src="../img/chef.png" alt="">
                         </div>
                       </div>
                       <div class="col-md-4 d-flex flex-column ps-0">
@@ -223,9 +221,9 @@
                           id="preparation_date" required>
                       </div>
                     </div>
-                    <input class="keep-param" type="hidden" name="id" value="">
+                    <input name="id" class="recipe_id" type="hidden">
                     <div class="d-flex justify-content-end gap-3">
-                      <button class="btn btn-outline-dark" type="button" onclick="closeReviewForm()">Cancel</button>
+                      <button class="btn btn-outline-dark" type="reset">Reset</button>
                       <input class="btn btn-dark border-0" type="submit" value="Publish">
                     </div>
                   </div>
@@ -395,7 +393,7 @@
                 </div>
 
               </div>
-              <input id="recipe_id" type="hidden" name="id" value="">
+              <input class="recipe_id" type="hidden" name="id" value="">
               <div class="row button mx-auto mt-2 fit-content">
                 <button type="submit" class="btn btn-dark">Login</button>
               </div>
@@ -462,7 +460,7 @@
     document.querySelector(".area_name > span").textContent = recipe.strArea;
     document.querySelector(".preparation").textContent = recipe.strInstructions;
     document.querySelector(".recipe_img").src = recipe.strMealThumb;
-    document.querySelector("#recipe_id").value = recipe.idMeal;
+    document.querySelectorAll(".recipe_id").forEach((el) => el.value = recipe.idMeal);
     document.querySelector(".card-save").setAttribute("data-recipe", recipe.idMeal)
 
 
@@ -489,7 +487,7 @@
 
 
 
-
+   
 
 
 

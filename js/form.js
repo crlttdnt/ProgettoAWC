@@ -1,5 +1,5 @@
 function mostraPassword(bottone) {
-    let icone = bottone.querySelectorAll("svg");
+    let icone = bottone.querySelectorAll("i");
 
     icone.forEach((icona) => {
         icona.classList.toggle("d-none");
@@ -57,7 +57,6 @@ function controllaUguaglianzaPassword(password1, password2) {
     }
 
 }
-
 
 //Controllo che la data non sia futura
 function controllaData(date) {
@@ -147,7 +146,6 @@ function controllaEModificaUtente(form) {
     return true;
 }
 
-
 function controllaELogin(form) {
     let dati = new FormData(form);
 
@@ -173,36 +171,81 @@ function enableEdit() {
     document.querySelector("#utente-password>input").toggleAttribute("disabled");
 }
 
-// function controllaERegistraRecensione(form) {
-//     let inputs = form.querySelectorAll("input");
 
-//     for (let input of inputs) {
-//         if (!input.checkValidity) {
-//             return false; //Non inviare il form
-//         }
-//     }
+function controllaERegistraRecensione(form) {
+    let inputs = form.querySelectorAll("input");
 
-//     if (!controllaData(form.querySelector("input#preparation-date"))) {
-//         return false;
-//     }
+    for (let input of inputs) {
+        if (!input.checkValidity) {
+            return false; //Non inviare il form
+        }
+    }
 
-//     // form valido
-//     console.log("è valido")
-//     let dati = new FormData(form);
+    if (!controllaData(form.querySelector("input#preparation_date"))) {
+        return false;
+    }
 
-//     let review = {
-//         title: getURLParam("id"), //id
-//         utente: getUtenteLoggato().email, //autore ricetta
-//         text: dati.get("review-text"),
-//         difficulty: dati.get("difficoltà")+1,
-//         taste: dati.get("gusto")+1,
-//         date: dati.get("preparation-date")
-//     }
+    let dati = new FormData(form);
+
+    let review = {
+        title: getURLParam("id"), 
+        utente: getUtenteLoggato().email, 
+        text: dati.get("content"),
+        difficulty: dati.get("difficulty"),
+        taste: dati.get("taste"),
+        date: dati.get("date")
+    }
     
    
-//     addReview(review);
+    addReview(review);
 
-//     document.querySelector("#recipe-review").value = "";
+    return true;
+}
 
-//     return true;
-// }
+// Interaction with the Taste Input of the Review Form
+function voteTaste(vote) {
+    let taste_stars = document.querySelectorAll(".review-taste-input>img");
+    if (!vote)
+        return;
+    //Edit Graphics
+    for (let i = 0; i < vote; i++) {
+        taste_stars[i].classList.remove("tint-black");
+    }
+    for (let i = vote; i < taste_stars.length; i++) {
+        taste_stars[i].classList.add("tint-black");
+    }
+}
+
+// Interaction with the Difficulty Input of the Review Form
+function voteDifficulty(vote) {
+    let difficulty_stars = document.querySelectorAll(".review-difficulty-input>img");
+    if (!vote)
+        return;
+    //Edit Graphics
+    for (let i = 0; i < vote; i++) {
+        difficulty_stars[i].classList.add("tint-primary");
+    }
+    for (let i = vote; i < difficulty_stars.length; i++) {
+        difficulty_stars[i].classList.remove("tint-primary");
+    }
+}
+
+function enableNoteEdit(card) {
+    card.querySelector("textarea").toggleAttribute("disabled");
+    card.querySelector(".edit_note_button").classList.add("d-none");
+    card.querySelector(".save_note_button").classList.remove("d-none");
+}
+
+function saveNote(card) {
+    let id = card.querySelector(".save_note_button").getAttribute("data-id");
+    let text = card.querySelector("textarea").value;
+    remToCookbook(id);
+
+    addToCookbook({
+        id: id,
+        text: text
+    });
+
+    card.querySelector(".edit_note_button").classList.remove("d-none");
+    card.querySelector(".save_note_button").classList.add("d-none");
+}
