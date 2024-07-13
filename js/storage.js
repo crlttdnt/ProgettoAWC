@@ -211,7 +211,7 @@ function cancellaUtente() {
 }
 
 function isInCookbook(id) {
-    let user_cookbook = getUtenteLoggato().cookbook;
+    let user_cookbook = getUtenteLoggato()?.cookbook;
     if (!user_cookbook) {
         return false;
     }
