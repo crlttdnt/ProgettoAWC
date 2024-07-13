@@ -180,7 +180,7 @@
                         aria-labelledby="v-pills-ricettario-tab" tabindex="0">
                         <div class="overflow-x-auto">
                             <h3 class="ms-5 mt-3 text-uppercase">My Cookbook:</h3>
-                            <div id="ricettario"
+                            <div id="ricettario_container"
                                 class="d-flex gap-3 justify-content-center flex-column align-items-center">
                                 <!-- Ricetta del Ricettario -->
                                 <div class="ricettario_template d-none card m-3 p-3 rounded-5 border-1 w-100" style="max-width: 900px;"
@@ -190,21 +190,21 @@
                                         <div class="col-md-3">
                                             <div class="card-body">
                                                 <div class="d-flex align-items-center gap-2">
-                                                    <img src="https://www.themealdb.com/images/media/meals/yqwtvu1487426027.jpg"
-                                                        class="card-img card-img-top w-100" alt="...">
+                                                    <img src=""
+                                                        class=" ricetta-img card-img card-img-top w-100" alt="...">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-md-9">
                                             <div class="card-body">
-                                                <h4 class="mb-2">
+                                                <h4 class="ricetta-nome mb-2">
                                                     Nome della Ricetta
                                                 </h4>
                                                 <p class="mb-0 pb-0">
                                                     Nota:
                                                 </p>
-                                                <p class="fs-5">
-                                                    Ciao come va
+                                                <p class="ricetta-nota fs-5">
+                                                    Ciao prova
                                                 </p>
                                             </div>
                                         </div>
@@ -280,8 +280,32 @@
         document.querySelector("#utente-cognome>input").value = dati_utente.cognome;
         document.querySelector("#utente-data>input").value = dati_utente.data;
         document.querySelector("#utente-password>input").value = dati_utente.password;
+        
+        console.log(dati_utente.cookbook);
+        
+        let ricettario_container = document.querySelector("#ricettario_container");
+        let ricettario_template = document.querySelector(".ricettario_template");
+        
 
 
+
+        for (let ricetta of dati_utente.cookbook) { //ricetta: id e text
+            let ricetta_item = ricettario_template.cloneNode(true);
+            ricetta_item.classList.remove("d-none");
+            ricetta_item.querySelector(".ricetta-nota").textContent = ricetta.text;  
+
+            let recipe = await getById(ricetta.id);
+
+            console.log(recipe);
+
+            ricetta_item.querySelector(".ricetta-nome").textContent = recipe.strMeal; 
+            ricetta_item.querySelector(".ricetta-img").src = recipe.strMealThumb;            ; 
+
+            ricettario_container.appendChild(ricetta_item);
+        }
+
+
+    
 
     </script>
 
