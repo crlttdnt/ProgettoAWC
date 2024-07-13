@@ -233,15 +233,16 @@
           </div>
         </div>
 
+      <div class="review_container">
         <!-- Recensione -->
-        <div class="review-card | card m-3 p-3 rounded-5 shadow border-0 " style="max-width: 900px;"
+        <div class="review_template review-card | card m-3 p-3 rounded-5 shadow border-0 " style="max-width: 900px;"
           data-template-type="attribute" data-template-attribute="data-my-review" data-template-value="my_review"
           data-my-review="false">
           <div class="row">
             <div class="col-md-3">
               <div class="card-body">
                 <!-- Username & Picture -->
-                <div class="d-flex align-items-center gap-2">
+                <div class="review-user d-flex align-items-center gap-2">
                   <p data-template-type="content" data-template-value="author" class="card-text">Username</p>
                 </div>
                 <!-- Taste -->
@@ -289,11 +290,11 @@
             <div class="col-md-9">
               <div class="card-body">
                 <!-- Review Date -->
-                <p class="text-secondary mb-2">
+                <p class="review-date text-secondary mb-2">
                   <span data-template-type="content" data-template-value="date">mm-dd-yyyy</span>
                 </p>
                 <!-- Review Content -->
-                <p data-template-type="content" data-template-value="content" class="card-text fs-5">Lorem ipsum dolor
+                <p data-template-type="content" data-template-value="content" class="review-text card-text fs-5">Lorem ipsum dolor
                   sit
                   amet
                   consectetur adipisicing elit. Sunt quisquam ratione
@@ -316,6 +317,7 @@
             </div>
           </div>
         </div>
+      </div>
       </div>
     </div>
 
@@ -485,6 +487,44 @@
       document.querySelector(".card-save>i").classList.add("fas");
     }
 
+
+    console.log(localStorage.recensioni);
+
+    let review_container = document.querySelector(".review_container");
+    let review_template = document.querySelector(".review_template");
+
+    const recensioniJSON = localStorage.getItem('recensioni');
+    if (recensioniJSON) {
+      const recensioni = JSON.parse(recensioniJSON);
+
+      for (const prodottoId in recensioni) {
+          let review_item = review_template.cloneNode(true);
+          const recensioniProdotto = recensioni[prodottoId];
+          recensioniProdotto.forEach(recensione => {
+          //review_item.classList.remove("d-none");
+          review_item.querySelector(".review-user").textContent = recensione.utente;
+          review_item.querySelector(".review-date").textContent = recensione.date;
+          
+          review_container.appendChild(review_item);
+          
+          console.log(recensione);
+          });
+        
+      }
+    }
+
+/*
+    for (let review of localStorage.recensioni) {
+      let review_item = review_template.cloneNode(true);
+      //review_item.classList.remove("d-none");
+      //review_item.querySelector(".review-user").textContent = review.utente;
+      //review_item.querySelector(".review-date").textContent = review.date;
+      
+      console.log(review);
+
+      //review_container.appendChild(review_item);
+    }
+      */
 
 
    
