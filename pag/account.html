@@ -133,8 +133,8 @@
                                         </h3>
                                     </div>
                                     <div class="mb-3">
-                                        <label for="date">Password</label>
-                                        <h3 id="utente-data">
+                                        <label for="password">Password</label>
+                                        <h3 id="utente-password">
                                             <input name="password-modify" id="password-modify"
                                                 class="form-control focus-ring focus-ring-green password"
                                                 type="password" value="" oninput="controllaCampo(this)"
@@ -264,6 +264,12 @@
         console.log(dati_utente);
 
         document.querySelector("#utente-email").textContent = dati_utente.email;
+        document.querySelector("#utente-nome").textContent = dati_utente.nome;
+        document.querySelector("#utente-cognome").textContent = dati_utente.cognome;
+        document.querySelector("#utente-data").textContent = dati_utente.data;
+        document.querySelector("#utente-password").textContent = dati_utente.password;
+
+
 
     </script>
 
