@@ -212,6 +212,9 @@ function cancellaUtente() {
 
 function isInCookbook(id) {
     let user_cookbook = getUtenteLoggato().cookbook;
+    if (!user_cookbook) {
+        return false;
+    }
     for (let recipe of user_cookbook) {
         if (recipe.id == id) {
             return true;

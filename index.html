@@ -52,18 +52,10 @@
                                     <input class="form-control me-2 focus-ring focus-ring-light w-100" type="search"
                                         name="search" id="search" placeholder="Search" aria-label="Search">
                                     <button type="submit" class="btn btn-dark me-2">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                            fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                                            <path
-                                                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
-                                        </svg>
+                                        <i class="fas fa-search fs-6"></i>
                                     </button>
                                     <a class="loggato d-none btn btn-outline-dark" href="pag/account.html">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
-                                            fill="currentColor" class="bi bi-person" viewBox="-2 -2 20 20">
-                                            <path
-                                                d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z" />
-                                        </svg>
+                                        <i class="far fa-user fs-6"></i>
                                     </a>
                                 </form>
                             </li>
@@ -138,32 +130,41 @@
                 <div id="carouselSuggestions" class="carousel slide">
                     <div class="carousel-inner">
                         <div class="carousel-item d-none">
-                            <a href="">
-                                <div class="d-xl-flex gap-4">
-                                    <div>
+                            <div class="d-xl-flex gap-4">
+                                <div>
+                                    <a class="carousel_link" href="">
                                         <img class="carousel_img" src="" width="500" class="d-block">
-                                    </div>
-                                    <div>
-                                        <p>
-                                        <h4 class="carousel_name">Tandoori chicken</h4>
-                                        </p>
-                                        <p>Category: <span class="carousel_category">Chicken</span></p>
-                                        <p>Area: <span class="carousel_area">Indian</span></p>
-                                        <p class="carousel_preparation">
-                                            Mix the lemon juice with the paprika and red onions in a large shallow dish.
-                                            Slash each chicken thigh three times, then turn them in the juice and set
-                                            aside
-                                            for 10 mins.\r\nMix all of the marinade ingredients together and pour over
-                                            the
-                                            chicken. Give everything a good mix, then cover and chill for at least 1 hr.
-                                            This can be done up to a day in advance.\r\nHeat the grill. Lift the chicken
-                                            pieces onto a rack over a baking tray. Brush over a little oil and grill for
-                                            8
-                                            mins on each side or until lightly charred and completely cooked through.
-                                        </p>
-                                    </div>
+                                    </a>
                                 </div>
-                            </a>
+                                <div>
+                                    <p>
+                                    <h4 class="carousel_name">Tandoori chicken</h4>
+                                    </p>
+                                    <p>Category: 
+                                        <a class="carousel_category" href="">
+                                            <span>Chicken</span>
+                                        </a>
+                                    </p>
+                                    
+                                    <p>Area: 
+                                        <a class="carousel_area" href="">
+                                            <span>Indian</span>
+                                        </a>
+                                    </p>
+                                    <p class="carousel_preparation">
+                                        Mix the lemon juice with the paprika and red onions in a large shallow dish.
+                                        Slash each chicken thigh three times, then turn them in the juice and set
+                                        aside
+                                        for 10 mins.\r\nMix all of the marinade ingredients together and pour over
+                                        the
+                                        chicken. Give everything a good mix, then cover and chill for at least 1 hr.
+                                        This can be done up to a day in advance.\r\nHeat the grill. Lift the chicken
+                                        pieces onto a rack over a baking tray. Brush over a little oil and grill for
+                                        8
+                                        mins on each side or until lightly charred and completely cooked through.
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -256,23 +257,8 @@
                                         <div class="col-2 d-flex justify-content-end align-items-center ">
                                             <button type="button" class="btn btn-light border"
                                                 onclick="mostraPassword(this)">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                    fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
-                                                    <path
-                                                        d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8M1.173 8a13 13 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5s3.879 1.168 5.168 2.457A13 13 0 0 1 14.828 8q-.086.13-.195.288c-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5s-3.879-1.168-5.168-2.457A13 13 0 0 1 1.172 8z" />
-                                                    <path
-                                                        d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5M4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0" />
-                                                </svg>
-                                                <svg class="d-none" xmlns="http://www.w3.org/2000/svg" width="16"
-                                                    height="16" fill="currentColor" class="bi bi-eye-slash"
-                                                    viewBox="0 0 16 16">
-                                                    <path
-                                                        d="M13.359 11.238C15.06 9.72 16 8 16 8s-3-5.5-8-5.5a7 7 0 0 0-2.79.588l.77.771A6 6 0 0 1 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13 13 0 0 1 14.828 8q-.086.13-.195.288c-.335.48-.83 1.12-1.465 1.755q-.247.248-.517.486z" />
-                                                    <path
-                                                        d="M11.297 9.176a3.5 3.5 0 0 0-4.474-4.474l.823.823a2.5 2.5 0 0 1 2.829 2.829zm-2.943 1.299.822.822a3.5 3.5 0 0 1-4.474-4.474l.823.823a2.5 2.5 0 0 0 2.829 2.829" />
-                                                    <path
-                                                        d="M3.35 5.47q-.27.24-.518.487A13 13 0 0 0 1.172 8l.195.288c.335.48.83 1.12 1.465 1.755C4.121 11.332 5.881 12.5 8 12.5c.716 0 1.39-.133 2.02-.36l.77.772A7 7 0 0 1 8 13.5C3 13.5 0 8 0 8s.939-1.721 2.641-3.238l.708.709zm10.296 8.884-12-12 .708-.708 12 12z" />
-                                                </svg>
+                                                <i class="fas fa-eye"></i>
+                                                <i class="fas fa-eye-slash d-none"></i>
                                             </button>
                                         </div>
                                     </div>
@@ -506,10 +492,12 @@
             }
             carousel_item.querySelector(".carousel_img").src = recipe.strMealThumb;
             carousel_item.querySelector(".carousel_name").textContent = recipe.strMeal;
-            carousel_item.querySelector(".carousel_category").textContent = recipe.strCategory;
-            carousel_item.querySelector(".carousel_area").textContent = recipe.strArea;
+            carousel_item.querySelector(".carousel_category").href = "pag/ricerca.html?category=" + recipe.strCategory;
+            carousel_item.querySelector(".carousel_category span").textContent = recipe.strCategory;
+            carousel_item.querySelector(".carousel_area").href = "pag/ricerca.html?area=" + recipe.strArea;
+            carousel_item.querySelector(".carousel_area span").textContent = recipe.strArea;
             carousel_item.querySelector(".carousel_preparation").textContent = recipe.strInstructions.substr(0, 400) + "...";
-            carousel_item.querySelector("a").href = "pag/ricetta.html?id=" + recipe.idMeal;
+            carousel_item.querySelector(".carousel_link").href = "pag/ricetta.html?id=" + recipe.idMeal;
             carousel_container.appendChild(carousel_item);
         }
         carousel_template.remove();

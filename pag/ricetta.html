@@ -109,8 +109,17 @@
                 <i class="far fa-heart fs-2"></i>
               </a>
             </div>
-            <p>Category: <span class="category_name">Category</span></p>
-            <p>Area: <span class="area_name">Area</span></p>
+            <p>Category:
+              <a class="category_name" href="">
+                <span>Chicken</span>
+              </a>
+            </p>
+
+            <p>Area:
+              <a class="area_name" href="">
+                <span>Indian</span>
+              </a>
+            </p>
             <p> Preparation: </p>
             <p class="preparation overflow-y-auto" style="max-height: 14lh;"> Instructions
             </p>
@@ -120,16 +129,18 @@
         <div>
           <div class="ingredient_container row text-center w-100 justify-content-center">
             <h5>Ingredients:</h5>
-            <div class="ingredient_item col-3 flex-nowrap d-flex align-items-center justify-content-center mx-3 my-2">
-              <a href="#" class="ingredient_link d-flex align-items-center justify-content-center gap-2">
+
+            <div class="ingredient_item d-none col-3 flex-nowrap d-flex align-items-center justify-content-center mx-3 my-2">
+              <a href="" class="ingredient_link d-flex align-items-center justify-content-center gap-2">
                 <img class="ingredient_img" src="https://www.themealdb.com/images/ingredients/Lime-Small.png" alt=""
                   width="65px">
                 <h5 class="text-start">
-                  <span class="ingredient_name"> Name </span>
                   <span class="ingredient_measure"> Measure </span>
+                  <span class="ingredient_name"> Name </span>
                 </h5>
               </a>
             </div>
+
           </div>
         </div>
         <div class="row mt-5">
@@ -445,8 +456,10 @@
 
     let recipe = await getById(id);
     document.querySelector(".recipe_title").textContent = recipe.strMeal;
-    document.querySelector(".category_name").textContent = recipe.strArea;
-    document.querySelector(".area_name").textContent = recipe.strCategory;
+    document.querySelector(".category_name").href = "ricerca.html?category=" + recipe.strCategory;
+    document.querySelector(".category_name > span").textContent = recipe.strCategory;
+    document.querySelector(".area_name").href = "ricerca.html?area=" + recipe.strArea;
+    document.querySelector(".area_name > span").textContent = recipe.strArea;
     document.querySelector(".preparation").textContent = recipe.strInstructions;
     document.querySelector(".recipe_img").src = recipe.strMealThumb;
     document.querySelector("#recipe_id").value = recipe.idMeal;
@@ -460,9 +473,11 @@
 
     for (let ingredient of ingredients) {
       let ingredient_item = ingredient_template.cloneNode(true);
+      ingredient_item.classList.remove("d-none");
       ingredient_item.querySelector(".ingredient_name").textContent = ingredient.name;
       ingredient_item.querySelector(".ingredient_measure").textContent = ingredient.measure;
       ingredient_item.querySelector(".ingredient_img").src = "https://www.themealdb.com/images/ingredients/" + ingredient.name + "-Small.png";
+      ingredient_item.querySelector(".ingredient_link").href = "ricerca.html?ingredient=" + ingredient.name;
       ingredient_container.appendChild(ingredient_item);
     }
 
