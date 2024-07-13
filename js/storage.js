@@ -19,8 +19,8 @@ function utenteDoppio(utente) {
     if (!utenti_attuali) {
         return false;
     }
-    
-    for (let i=0; i < utenti_attuali.length; i++) {
+
+    for (let i = 0; i < utenti_attuali.length; i++) {
         if (utenti_attuali[i].email == utente) {
             return true;
         }
@@ -60,11 +60,11 @@ function getUtenteLoggato() {
 
 function getNomeCognome(email) {
     let utenti_attuali = JSON.parse(localStorage.getItem("utenti"));
-  
+
     if (email) {
         let trovati = utenti_attuali.filter((utente) => utente.email == email);
         return trovati[0].nome + " " + trovati[0].cognome;
-        
+
     }
     return null;
 }
@@ -114,11 +114,11 @@ function addReview(review) {
     } else {
         reviews = JSON.parse(reviews);
     }
-    
+
     if (!reviews[review.title]) {
         reviews[review.title] = [];
     }
-   
+
     reviews[review.title].push(review);
     localStorage.setItem("recensioni", JSON.stringify(reviews))
 }
@@ -143,7 +143,7 @@ function getUserReviews() {
     let reviews = JSON.parse(localStorage.getItem("recensioni"));
     let user_reviews = []
     for (let recipe_id of Object.keys(reviews)) { // !!! Preso da https://stackoverflow.com/questions/36839089/how-to-retrieve-all-fields-from-a-json-file
-        for(let recipe of reviews[recipe_id]) {
+        for (let recipe of reviews[recipe_id]) {
             if (recipe.utente == email) {
                 user_reviews.push(recipe);
             }
@@ -208,6 +208,16 @@ function cancellaUtente() {
 
     sessionStorage.removeItem("utente_loggato");
     localStorage.setItem("utenti", JSON.stringify(utenti_attuali));
+}
+
+function isInCookbook(id) {
+    let user_cookbook = getUtenteLoggato().cookbook;
+    for (let recipe of user_cookbook) {
+        if (recipe.id == id) {
+            return true;
+        }
+    }
+    return false;
 }
 
 

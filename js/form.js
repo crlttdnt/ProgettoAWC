@@ -130,10 +130,6 @@ function controllaEModificaUtente(form) {
         return false;
     }
 
-    if (!controllaUguaglianzaPassword(form.querySelector("input#password-modify"), form.querySelector("input#password2-modify"))) {
-        return false;
-    }
-
     //form valido 
 
     let dati = new FormData(form);
@@ -143,12 +139,10 @@ function controllaEModificaUtente(form) {
         password: dati.get("password-modify"),
         nome: dati.get("nome-modify"),
         cognome: dati.get("lname-modify"),
-        genere: dati.get("gender-modify"),
         data: dati.get("date-modify"),
         cookbook: getUtenteLoggato().cookbook,
     }
 
-    console.log(utente_modificato);
     modificaDatiUtente(utente_modificato);
     return true;
 }
@@ -168,6 +162,16 @@ function controllaELogin(form) {
     return false;
 }
 
+function enableEdit() {
+    
+    document.querySelector(".edit_button").classList.add("d-none");
+    document.querySelector(".save_changes_button").classList.remove("d-none");
+    
+    document.querySelector("#utente-nome>input").toggleAttribute("disabled");
+    document.querySelector("#utente-cognome>input").toggleAttribute("disabled");
+    document.querySelector("#utente-data>input").toggleAttribute("disabled");
+    document.querySelector("#utente-password>input").toggleAttribute("disabled");
+}
 
 // function controllaERegistraRecensione(form) {
 //     let inputs = form.querySelectorAll("input");

@@ -16,6 +16,9 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
+        
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+          integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 </head>
 
 <body class="overflow-x-hidden">
@@ -100,58 +103,65 @@
                             <img id="utente-img" src="../img/non-loggato.png" width="220 rem" height="220 rem" alt="">
                         </div>
                         <div class="flex-grow-1">
-                            <div>
-
-                                <div class="mb-3 d-flex align-items-center gap-3">
-                                    <label for="email">Email:</label>
-                                    <h4 id="utente-email">carlotta.donato03@gmail.com</h4>
+                            <form onsubmit="return controllaEModificaUtente(this)">
+                                <div>
+                                    <div class="mb-3 d-flex align-items-center gap-3">
+                                        <label for="email">Email:</label>
+                                        <h4 id="utente-email">carlotta.donato03@gmail.com</h4>
+                                    </div>
+                                    <div class="d-md-grid gap-2"
+                                        style="grid-template-rows: auto auto; grid-template-columns: auto auto;">
+                                        <div class="mb-3">
+                                            <label for="nome">First Name</label>
+                                            <h3 id="utente-nome">
+                                                <input name="nome-modify" id="nome-modify"
+                                                    class="form-control focus-ring focus-ring-green" type="text"
+                                                    value="" oninput="controllaCampo(this)" pattern="[a-zA-Z]{2,}$"
+                                                    required disabled>
+                                            </h3>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="cognome">Last Name</label>
+                                            <h3 id="utente-cognome">
+                                                <input name="lname-modify" id="lname-modify"
+                                                    class="form-control focus-ring focus-ring-green" type="text"
+                                                    oninput="controllaCampo(this)" pattern="[a-zA-Z]{2,}$" required
+                                                    disabled>
+                                            </h3>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="date">Date of Birth</label>
+                                            <h3 id="utente-data">
+                                                <input name="date-modify" id="birthdate-modify"
+                                                    class="form-control focus-ring focus-ring-green " type="date"
+                                                    oninput="controllaData(this)" required disabled>
+                                            </h3>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="password">Password</label>
+                                            <h3 id="utente-password">
+                                                <input name="password-modify" id="password-modify"
+                                                    class="form-control focus-ring focus-ring-green password"
+                                                    type="password" value="" oninput="controllaCampo(this)"
+                                                    pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d!?&%#.,]{8,}$"
+                                                    aria-describedby="password-info" disabled>
+                                            </h3>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="d-md-grid gap-2"
-                                    style="grid-template-rows: auto auto; grid-template-columns: auto auto;">
-                                    <div class="mb-3">
-                                        <label for="nome">First Name</label>
-                                        <h3 id="utente-nome">
-                                            <input name="nome-modify" id="nome-modify"
-                                                class="form-control focus-ring focus-ring-green" type="text" value=""
-                                                oninput="controllaCampo(this)" pattern="[a-zA-Z]{2,}$" required>
-                                        </h3>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="cognome">Last Name</label>
-                                        <h3 id="utente-cognome">
-                                            <input name="lname-modify" id="lname-modify"
-                                                class="form-control focus-ring focus-ring-green" type="text"
-                                                oninput="controllaCampo(this)" pattern="[a-zA-Z]{2,}$" required>
-                                        </h3>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="date">Date of Birth</label>
-                                        <h3 id="utente-data">
-                                            <input name="date-modify" id="birthdate-modify"
-                                                class="form-control focus-ring focus-ring-green " type="date"
-                                                oninput="controllaData(this)" required>
-                                        </h3>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="password">Password</label>
-                                        <h3 id="utente-password">
-                                            <input name="password-modify" id="password-modify"
-                                                class="form-control focus-ring focus-ring-green password"
-                                                type="password" value="" oninput="controllaCampo(this)"
-                                                pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
-                                                aria-describedby="password-info">
-                                        </h3>
-                                    </div>
+
+
+                                <div class="d-flex justify-content-end">
+                                    <button data-bs-toggle="modal" class="btn btn-danger me-5"> Delete your
+                                        account</button>
+                                    <button type="reset" class="btn btn-outline-dark me-2" onclick="logout()">Log
+                                        out</button>
+                                    <button type="submit" class="save_changes_button d-none btn btn-success me-2">Save
+                                        the changes</button>
+                                    <button type="button" class="edit_button btn btn-success me-2"
+                                        onclick="enableEdit()">Edit</button>
                                 </div>
-                            </div>
-
-
-                            <div class="d-flex justify-content-end">
-                                <button data-bs-toggle="modal" class="btn btn-danger me-5"> Delete your account</button>
-                                <button type="reset" class="btn btn-outline-dark me-2" onclick="logout()">Log
-                                    out</button>
-                                <button type="submit" class="btn btn-success me-2">Save the changes</button>
-                            </div>
+                            </form>
                         </div>
 
                     </div>
@@ -226,7 +236,7 @@
 
     </section>
 
-    
+
 
     <!-- Utente non Loggato -->
     <section class="non-loggato ">
@@ -264,10 +274,10 @@
         console.log(dati_utente);
 
         document.querySelector("#utente-email").textContent = dati_utente.email;
-        document.querySelector("#utente-nome").textContent = dati_utente.nome;
-        document.querySelector("#utente-cognome").textContent = dati_utente.cognome;
-        document.querySelector("#utente-data").textContent = dati_utente.data;
-        document.querySelector("#utente-password").textContent = dati_utente.password;
+        document.querySelector("#utente-nome>input").value = dati_utente.nome;
+        document.querySelector("#utente-cognome>input").value = dati_utente.cognome;
+        document.querySelector("#utente-data>input").value = dati_utente.data;
+        document.querySelector("#utente-password>input").value = dati_utente.password;
 
 
 
