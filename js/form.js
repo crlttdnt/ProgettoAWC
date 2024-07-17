@@ -191,8 +191,8 @@ function controllaERegistraRecensione(form) {
         title: getURLParam("id"), 
         utente: getUtenteLoggato().email, 
         text: dati.get("content"),
-        difficulty: dati.get("difficulty"),
-        taste: dati.get("taste"),
+        difficulty: parseInt(dati.get("difficulty")),
+        taste: parseInt(dati.get("taste")),
         date: dati.get("date")
     }
     

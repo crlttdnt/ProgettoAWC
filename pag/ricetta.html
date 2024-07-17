@@ -24,520 +24,543 @@
 
   <header>
 
-<!-- Navigation -->
-<header>
-  <div class="container-xl mx-auto pt-4">
-      <div class="bg-light rounded-3 position-relative">
+    <!-- Navigation -->
+    <header>
+      <div class="container-xl mx-auto pt-4">
+        <div class="bg-light rounded-3 position-relative">
           <nav class="navbar navbar-expand-lg bg-body-primary">
-              <button class="navbar-toggler bg-white ms-auto me-3" type="button" data-bs-toggle="collapse"
-                  data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-                  aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-              </button>
+            <button class="navbar-toggler bg-white ms-auto me-3" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+              aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
 
-              <div class="collapse navbar-collapse px-4" id="navbarNav">
-                  <div class="d-flex me-3">
-                      <a href="#">
-                          <img src="img/logo.png" alt="PGRC" height="50">
-                      </a>
-                  </div>
-                  <ul class="navbar-nav d-flex justify-content-between align-items-center w-100 m-0 gap-4">
-                      <li class="nav-item">
-                          <a class="nav-link text-uppercase fs-6" href="">Home</a>
-                      </li>
-                      <li class="loggato d-none nav-item">
-                          <a class="nav-link text-uppercase fs-6" href="pag/account.html">My
-                              cookbook</a>
-                      </li>
-                      <li class="nav-item flex-grow-1">
-                          <form class="d-flex w-100" role="search" action="pag/ricerca.html">
-                              <input class="form-control me-2 focus-ring focus-ring-light w-100" type="search"
-                                  name="search" id="search" placeholder="Search" aria-label="Search">
-                              <button type="submit" class="btn btn-dark me-2">
-                                  <i class="fas fa-search fs-6"></i>
-                              </button>
-                              <a class="loggato d-none btn btn-outline-dark" href="pag/account.html">
-                                  <i class="far fa-user fs-6"></i>
-                              </a>
-                          </form>
-                      </li>
-                      <li class="nav-item">
-                          <a class="non-loggato btn btn-dark" data-bs-toggle="modal" data-bs-target="#login">
-                              Log In
-                          </a>
-                      </li>
-                      <li class="nav-item">
-                          <a class="non-loggato btn btn-outline-dark" data-bs-toggle="modal"
-                              data-bs-target="#new-account"> Sign up
-                          </a>
-                      </li>
-                  </ul>
+            <div class="collapse navbar-collapse px-4" id="navbarNav">
+              <div class="d-flex me-3">
+                <a href="#">
+                  <img src="img/logo.png" alt="PGRC" height="50">
+                </a>
               </div>
+              <ul class="navbar-nav d-flex justify-content-between align-items-center w-100 m-0 gap-4">
+                <li class="nav-item">
+                  <a class="nav-link text-uppercase fs-6" href="">Home</a>
+                </li>
+                <li class="loggato d-none nav-item">
+                  <a class="nav-link text-uppercase fs-6" href="pag/account.html">My
+                    cookbook</a>
+                </li>
+                <li class="nav-item flex-grow-1">
+                  <form class="d-flex w-100" role="search" action="pag/ricerca.html">
+                    <input class="form-control me-2 focus-ring focus-ring-light w-100" type="search" name="search"
+                      id="search" placeholder="Search" aria-label="Search">
+                    <button type="submit" class="btn btn-dark me-2">
+                      <i class="fas fa-search fs-6"></i>
+                    </button>
+                    <a class="loggato d-none btn btn-outline-dark" href="pag/account.html">
+                      <i class="far fa-user fs-6"></i>
+                    </a>
+                  </form>
+                </li>
+                <li class="nav-item">
+                  <a class="non-loggato btn btn-dark" data-bs-toggle="modal" data-bs-target="#login">
+                    Log In
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="non-loggato btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#new-account"> Sign
+                    up
+                  </a>
+                </li>
+              </ul>
+            </div>
           </nav>
 
           <div class="border-top d-flex justify-content-center gap-5">
-              <div class="dropdown">
-                  <button class="btn dropdown-toggle my-2 text-uppercase" type="button" data-bs-toggle="dropdown"
-                      aria-expanded="false">
-                      Categoria
-                  </button>
-                  <ul class="categories_container dropdown-menu">
-                      <li class="categories_item d-none">
-                          <a class="category_name dropdown-item" href="#">Categoria</a>
-                      </li>
-                  </ul>
-              </div>
+            <div class="dropdown">
+              <button class="btn dropdown-toggle my-2 text-uppercase" type="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Categoria
+              </button>
+              <ul class="categories_container dropdown-menu">
+                <li class="categories_item d-none">
+                  <a class="category_name dropdown-item" href="#">Categoria</a>
+                </li>
+              </ul>
+            </div>
 
-              <div class="dropdown">
-                  <button class="btn dropdown-toggle my-2 text-uppercase" type="button" data-bs-toggle="dropdown"
-                      aria-expanded="false">
-                      Area
-                  </button>
-                  <ul class="area_container dropdown-menu">
-                      <li class="area_item d-none">
-                          <a class="area_name dropdown-item" href="#">Area</a>
-                      </li>
-                  </ul>
-              </div>
+            <div class="dropdown">
+              <button class="btn dropdown-toggle my-2 text-uppercase" type="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Area
+              </button>
+              <ul class="area_container dropdown-menu">
+                <li class="area_item d-none">
+                  <a class="area_name dropdown-item" href="#">Area</a>
+                </li>
+              </ul>
+            </div>
           </div>
+        </div>
+
       </div>
-
-  </div>
-</header>
+    </header>
 
 
 
-  <section class="container-xl mx-auto my-5 px-1">
+    <section class="container-xl mx-auto my-5 px-1">
 
-    <div class="container-xxl my-5 py-3 px-1 d-flex justify-content-center">
+      <div class="container-xxl my-5 py-3 px-1 d-flex justify-content-center">
 
-      <div class="bg-light px-lg-5 px-1 py-4 rounded-5 shadow w-lg-75">
-        <div class="d-xl-flex gap-4">
-          <div style="min-width: min(50vw, 500px);">
-            <img class="recipe_img w-100" src="https://www.themealdb.com/images/media/meals/qptpvt1487339892.jpg"
-              class="d-block">
+        <div class="bg-light px-lg-5 px-1 py-4 rounded-5 shadow w-lg-75">
+          <div class="d-xl-flex gap-4">
+            <div style="min-width: min(50vw, 500px);">
+              <img class="recipe_img w-100" src="https://www.themealdb.com/images/media/meals/qptpvt1487339892.jpg"
+                class="d-block">
+            </div>
+            <div>
+              <div class="d-flex justify-content-between py-3">
+                <h4 class="recipe_title"> Title </h4>
+                <a class="loggato d-none btn btn-outline-dark card-save" data-bs-toggle="modal"
+                  data-bs-target="#recipe-note" style="height: fit-content;">
+                  <i class="far fa-heart fs-2"></i>
+                </a>
+              </div>
+              <p>Category:
+                <a class="category_name" href="">
+                  <span>Chicken</span>
+                </a>
+              </p>
+
+              <p>Area:
+                <a class="area_name" href="">
+                  <span>Indian</span>
+                </a>
+              </p>
+              <p> Preparation: </p>
+              <p class="preparation overflow-y-auto" style="max-height: 14lh;"> Instructions
+              </p>
+
+            </div>
           </div>
           <div>
-            <div class="d-flex justify-content-between py-3">
-              <h4 class="recipe_title"> Title </h4>
-              <a class="loggato d-none btn btn-outline-dark card-save" data-bs-toggle="modal"
-                data-bs-target="#recipe-note" style="height: fit-content;">
-                <i class="far fa-heart fs-2"></i>
-              </a>
-            </div>
-            <p>Category:
-              <a class="category_name" href="">
-                <span>Chicken</span>
-              </a>
-            </p>
+            <div class="ingredient_container row text-center w-100 justify-content-center">
+              <h5>Ingredients:</h5>
 
-            <p>Area:
-              <a class="area_name" href="">
-                <span>Indian</span>
-              </a>
-            </p>
-            <p> Preparation: </p>
-            <p class="preparation overflow-y-auto" style="max-height: 14lh;"> Instructions
-            </p>
+              <div
+                class="ingredient_item d-none col-lg-3 flex-nowrap d-flex align-items-center justify-content-center mx-3 my-2">
+                <a href="" class="ingredient_link d-flex align-items-center justify-content-center gap-2">
+                  <img class="ingredient_img" src="https://www.themealdb.com/images/ingredients/Lime-Small.png" alt=""
+                    width="65px">
+                  <h5 class="text-start">
+                    <span class="ingredient_measure"> Measure </span>
+                    <span class="ingredient_name"> Name </span>
+                  </h5>
+                </a>
+              </div>
 
-          </div>
-        </div>
-        <div>
-          <div class="ingredient_container row text-center w-100 justify-content-center">
-            <h5>Ingredients:</h5>
-
-            <div class="ingredient_item d-none col-3 flex-nowrap d-flex align-items-center justify-content-center mx-3 my-2">
-              <a href="" class="ingredient_link d-flex align-items-center justify-content-center gap-2">
-                <img class="ingredient_img" src="https://www.themealdb.com/images/ingredients/Lime-Small.png" alt=""
-                  width="65px">
-                <h5 class="text-start">
-                  <span class="ingredient_measure"> Measure </span>
-                  <span class="ingredient_name"> Name </span>
-                </h5>
-              </a>
-            </div>
-
-          </div>
-        </div>
-        <div class="row mt-5">
-          <!-- Difficoltà -->
-          <div class="col-6 mx-auto fit-content">
-            <label for="difficoltà" class="form-label text-uppercase fw-medium">Difficulty</label>
-            <div class="container d-flex align-items-center" id="difficoltà">
-              <h3 id="diff_text" class="fw-medium fs-4 me-3 p-0 m-0">3.5</h3>
-              <img width="30" src="../img/chef.png" alt="" class="tint-primary" style="transform:translateY(-2px)">
             </div>
           </div>
-          <!-- Gusto -->
-          <div class="col-6 mx-auto fit-content">
-            <label for="gusto" class="form-label text-uppercase fw-medium">Taste</label>
-            <div class="container d-flex" id="gusto">
-              <h3 id="taste_text" class="fw-medium fs-4 me-3 p-0 m-0">3.5</h3>
-              <img width="30" src="../img/star.png" alt="" style="transform:translateY(-4px)">
+          <div class="row mt-5">
+            <!-- Difficoltà -->
+            <div class="col-6 mx-auto fit-content">
+              <label for="difficoltà" class="form-label text-uppercase fw-medium">Difficulty</label>
+              <div class="container d-flex align-items-center" id="difficoltà">
+                <h3 id="diff_text" class="fw-medium fs-4 me-3 p-0 m-0">3.5</h3>
+                <img width="30" src="../img/chef.png" alt="" class="tint-primary" style="transform:translateY(-2px)">
+              </div>
+            </div>
+            <!-- Gusto -->
+            <div class="col-6 mx-auto fit-content">
+              <label for="gusto" class="form-label text-uppercase fw-medium">Taste</label>
+              <div class="container d-flex" id="gusto">
+                <h3 id="taste_text" class="fw-medium fs-4 me-3 p-0 m-0">3.5</h3>
+                <img width="30" src="../img/star.png" alt="" style="transform:translateY(-4px)">
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
 
 
-  </section>
+    </section>
 
-  <!-- Recensioni -->
-  <section class="container-xl mx-auto my-5">
+    <!-- Recensioni -->
+    <section class="container-xl mx-auto my-5">
 
-    <div class="container-xxl my-5 py-3 d-flex justify-content-center">
+      <div class="container-xxl my-5 py-3 d-flex justify-content-center">
 
-      <div class="bg-light px-5 py-4 rounded-5 shadow w-75">
+        <div class="bg-light px-5 py-4 rounded-5 shadow w-75">
 
-        <!-- Form Recensione -->
-        <div class="card m-3 p-3 rounded-5 shadow border-0 logged-in-only" style="max-width: 900px;">
-          <div class="row">
-            <div class="col-md-11">
-              <div class="card-body">
-                <form action="ricetta.html" name="review_form" onsubmit="return controllaERegistraRecensione(this)">
-                  <div class="row pe-4">
-                    <input name="content" id="review_content"
-                      class="w-100 border-0 border-bottom border-2 border-black ps-1" type="text"
-                      placeholder="Leave a review on this recipe...">
-                  </div>
-                  <div class="">
-                    <div class="row mt-4 mb-3">
-                      <div class="col-md-4 d-flex flex-column ps-0">
-                        <div class="d-flex align-items-center">
-                          <label class="mb-0" for="review_taste">Taste:</label>
-                          <input class="form-control m-0 border-0 w-fit" type="number" name="taste" id="review_taste"
-                            min="1" max="5" onchange="voteTaste(this.value)" value="1" required>
+          <!-- Form Recensione -->
+          <div class="non-loggato text-center fs-3">
+
+           Log In to Review this Recipe
+          </div>
+          <div class="loggato d-none card m-3 p-3 rounded-5 shadow border-0 logged-in-only" style="max-width: 900px;">
+            <div class="row">
+              <div class="col-md-11">
+                <div class="card-body">
+                  <form action="ricetta.html" name="review_form" onsubmit="return controllaERegistraRecensione(this)">
+                    <div class="row pe-4">
+                      <input name="content" id="review_content"
+                        class="w-100 border-0 border-bottom border-2 border-black ps-1" type="text"
+                        placeholder="Leave a review on this recipe...">
+                    </div>
+                    <div class="">
+                      <div class="row mt-4 mb-3">
+                        <div class="col-md-4 d-flex flex-column ps-0">
+                          <div class="d-flex align-items-center">
+                            <label class="mb-0" for="review_taste">Taste:</label>
+                            <input class="form-control m-0 border-0 w-fit" type="number" name="taste" id="review_taste"
+                              min="1" max="5" onchange="voteTaste(this.value)" value="1" required>
+                          </div>
+                          <div class="review-taste-input | review-score" style="cursor:pointer">
+                            <img width="25" src="../img/star.png" alt="">
+                            <img width="25" class="tint-black" src="../img/star.png" alt="">
+                            <img width="25" class="tint-black" src="../img/star.png" alt="">
+                            <img width="25" class="tint-black" src="../img/star.png" alt="">
+                            <img width="25" class="tint-black" src="../img/star.png" alt="">
+                          </div>
                         </div>
-                        <div class="review-taste-input | review-score" style="cursor:pointer">
-                          <img width="25" src="../img/star.png" alt="">
-                          <img width="25" class="tint-black" src="../img/star.png" alt="">
-                          <img width="25" class="tint-black" src="../img/star.png" alt="">
-                          <img width="25" class="tint-black" src="../img/star.png" alt="">
-                          <img width="25" class="tint-black" src="../img/star.png" alt="">
+                        <div class="col-md-4 d-flex flex-column ps-0">
+                          <div class="d-flex align-items-center">
+                            <label class="mb-0" for="review_difficulty">Difficulty:</label>
+                            <input class="form-control m-0 border-0 w-fit" type="number" name="difficulty"
+                              id="review_difficulty" min="1" max="5" value="1" onchange="voteDifficulty(this.value)"
+                              required>
+                          </div>
+                          <div class="review-difficulty-input | review-score" style="cursor:pointer">
+                            <img width="25" class="tint-primary" src="../img/chef.png" alt="">
+                            <img width="25" src="../img/chef.png" alt="">
+                            <img width="25" src="../img/chef.png" alt="">
+                            <img width="25" src="../img/chef.png" alt="">
+                            <img width="25" src="../img/chef.png" alt="">
+                          </div>
+                        </div>
+                        <div class="col-md-4 d-flex flex-column ps-0">
+                          <label class="mb-0" for="preparation_date">Preparation Date</label>
+                          <input class="form-control border border-2 border-black fs-5" type="date" name="date"
+                            id="preparation_date" required>
                         </div>
                       </div>
-                      <div class="col-md-4 d-flex flex-column ps-0">
-                        <div class="d-flex align-items-center">
-                          <label class="mb-0" for="review_difficulty">Difficulty:</label>
-                          <input class="form-control m-0 border-0 w-fit" type="number" name="difficulty"
-                            id="review_difficulty" min="1" max="5" value="1" onchange="voteDifficulty(this.value)" required>
-                        </div>
-                        <div class="review-difficulty-input | review-score" style="cursor:pointer">
-                          <img width="25" class="tint-primary"  src="../img/chef.png" alt="">
-                          <img width="25" src="../img/chef.png" alt="">
-                          <img width="25" src="../img/chef.png" alt="">
-                          <img width="25" src="../img/chef.png" alt="">
-                          <img width="25" src="../img/chef.png" alt="">
-                        </div>
-                      </div>
-                      <div class="col-md-4 d-flex flex-column ps-0">
-                        <label class="mb-0" for="preparation_date">Preparation Date</label>
-                        <input class="form-control border border-2 border-black fs-5" type="date" name="date"
-                          id="preparation_date" required>
+                      <input name="id" class="recipe_id" type="hidden">
+                      <div class="d-flex justify-content-end gap-3">
+                        <button class="btn btn-outline-dark" type="reset">Reset</button>
+                        <input class="btn btn-dark border-0" type="submit" value="Publish">
                       </div>
                     </div>
-                    <input name="id" class="recipe_id" type="hidden">
-                    <div class="d-flex justify-content-end gap-3">
-                      <button class="btn btn-outline-dark" type="reset">Reset</button>
-                      <input class="btn btn-dark border-0" type="submit" value="Publish">
-                    </div>
-                  </div>
-                </form>
+                  </form>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-      <div class="review_container">
-        <!-- Recensione -->
-        <div class="zero_recensioni text-center fs-3">
+          <div class="review_container">
+            <!-- Recensione -->
+            <div class="zero_recensioni text-center fs-3">
 
-          There are no reviews for this recipe
-        </div>
-
-        <div class="review_template review-card | card m-3 p-3 rounded-5 shadow border-0 d-none" style="max-width: 900px;"
-          data-template-type="attribute" data-template-attribute="data-my-review" data-template-value="my_review"
-          data-my-review="false">
-          <div class="row">
-            <div class="col-md-3">
-              <div class="card-body">
-                <!-- Username & Picture -->
-                <div class="review-user d-flex align-items-center gap-2">
-                  <p data-template-type="content" data-template-value="author" class="card-text">Username</p>
-                </div>
-                <!-- Taste -->
-                <div data-template-type="element" data-template-value="taste">
-                  <div>
-                    <p class="card-text my-0 pt-3">
-                      Taste:
-                    </p>
-                    <div class="review-score">
-                      <img data-template-type="attribute" data-template-attribute="class" data-template-value="1"
-                        width="25" src="../img/star.png" alt="Taste Score">
-                      <img data-template-type="attribute" data-template-attribute="class" data-template-value="2"
-                        width="25" src="../img/star.png" alt="Taste Score">
-                      <img data-template-type="attribute" data-template-attribute="class" data-template-value="3"
-                        width="25" src="../img/star.png" alt="Taste Score">
-                      <img data-template-type="attribute" data-template-attribute="class" data-template-value="4"
-                        width="25" src="../img/star.png" alt="Taste Score">
-                      <img data-template-type="attribute" data-template-attribute="class" data-template-value="5"
-                        width="25" src="../img/star.png" alt="Taste Score">
-                    </div>
-                  </div>
-                </div>
-                <!-- Difficulty -->
-                <div data-template-type="element" data-template-value="difficulty">
-                  <div>
-                    <p class="card-text my-0 pt-3">
-                      Difficulty:
-                    </p>
-                    <div class="review-score">
-                      <img data-template-type="attribute" data-template-attribute="class" data-template-value="1"
-                        width="25" src="../img/chef.png" alt="Difficulty Score">
-                      <img data-template-type="attribute" data-template-attribute="class" data-template-value="2"
-                        width="25" src="../img/chef.png" alt="Difficulty Score">
-                      <img data-template-type="attribute" data-template-attribute="class" data-template-value="3"
-                        width="25" src="../img/chef.png" alt="Difficulty Score">
-                      <img data-template-type="attribute" data-template-attribute="class" data-template-value="4"
-                        width="25" src="../img/chef.png" alt="Difficulty Score">
-                      <img data-template-type="attribute" data-template-attribute="class" data-template-value="5"
-                        width="25" src="../img/chef.png" alt="Difficulty Score">
-                    </div>
-                  </div>
-                </div>
-              </div>
+              There are no reviews for this recipe
             </div>
-            <div class="col-md-9">
-              <div class="card-body">
-                <!-- Review Date -->
-                <p class="review-date text-secondary mb-2">
-                  <span data-template-type="content" data-template-value="date">mm-dd-yyyy</span>
-                </p>
 
-                <!-- Review Content -->
-                <p data-template-type="content" data-template-value="content" class="review-text card-text fs-5">Lorem ipsum dolor
-                  sit
-                  amet
-                  consectetur adipisicing elit. Sunt quisquam ratione
-                  iure laboriosam ipsam, nesciunt pariatur ullam eius saepe blanditiis.
-                </p>
-              </div>
-            </div>
-            <!-- Review Metadata -->
-            <span data-template-type="attribute" data-template-attribute="data-timestamp"
-              data-template-value="timestamp" class="d-none"></span>
-            <span data-template-type="attribute" data-template-attribute="data-recipe_id"
-              data-template-value="recipe_id" class="d-none"></span>
-            <span data-template-type="attribute" data-template-attribute="data-email" data-template-value="email"
-              class="d-none"></span>
-          </div>
-          <div class="review-delete" data-template-type="attribute" data-template-attribute="data-bs-recipe"
-            data-template-value="recipe" data-bs-toggle="modal" data-bs-target="#deleteReviewModal"
-            data-bs-recipe="Recipe Name">
-            <div class="w-100 h-100" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Delete Review">
-            </div>
-          </div>
-        </div>
-      </div>
-      </div>
-    </div>
-
-
-  </section>
-
-
-  <!-- Modals -->
-
-  <!-- Modal login-->
-  <div class="modal fade" id="login" tabindex="-1" aria-labelledby="login" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header bg-body-dark">
-          <h1 class="modal-title fs-2 fw-medium">It's nice to see you again!</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <div class="container d-flex justify-content-center align-items-center">
-
-            <form onsubmit="return controllaELogin(this)">
-              <div class="row py-3 align-items-center">
-                <div class="col-1">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-                    class="bi bi-person-fill" viewBox="0 0 20 20">
-                    <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
-                  </svg>
-                </div>
-                <div class="col">
-                  <input name="email" id="email-utente" class="form-control focus-ring focus-ring-green" type="email"
-                    placeholder="Insert your e-mail">
-                </div>
-              </div>
+            <div class="review_template review-card | card m-3 p-3 rounded-5 shadow border-0 d-none"
+              style="max-width: 900px;" data-template-type="attribute" data-template-attribute="data-my-review"
+              data-template-value="my_review" data-my-review="false">
               <div class="row">
-                <div class="col-1">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-                    class="bi bi-lock-fill" viewBox="0 0 20 20">
-                    <path
-                      d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2m3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2" />
-                  </svg>
+                <div class="col-md-3">
+                  <div class="card-body">
+                    <!-- Username & Picture -->
+                    <div class="review-user d-flex align-items-center gap-2">
+                      <p data-template-type="content" data-template-value="author" class="card-text">Username</p>
+                    </div>
+                    <!-- Taste -->
+                    <div data-template-type="element" data-template-value="taste">
+                      <div>
+                        <p class="card-text my-0 pt-3">
+                          Taste:
+                        </p>
+                        <div class="review-taste-score">
+                          <img data-template-type="attribute" data-template-attribute="class" data-template-value="1"
+                            width="25" src="../img/star.png" alt="Taste Score">
+                          <img data-template-type="attribute" data-template-attribute="class" data-template-value="2"
+                            width="25" src="../img/star.png" alt="Taste Score">
+                          <img data-template-type="attribute" data-template-attribute="class" data-template-value="3"
+                            width="25" src="../img/star.png" alt="Taste Score">
+                          <img data-template-type="attribute" data-template-attribute="class" data-template-value="4"
+                            width="25" src="../img/star.png" alt="Taste Score">
+                          <img data-template-type="attribute" data-template-attribute="class" data-template-value="5"
+                            width="25" src="../img/star.png" alt="Taste Score">
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Difficulty -->
+                    <div data-template-type="element" data-template-value="difficulty">
+                      <div>
+                        <p class="card-text my-0 pt-3">
+                          Difficulty:
+                        </p>
+                        <div class="review-difficulty-score">
+                          <img data-template-type="attribute" data-template-attribute="class" data-template-value="1"
+                            width="25" src="../img/chef.png" alt="Difficulty Score">
+                          <img data-template-type="attribute" data-template-attribute="class" data-template-value="2"
+                            width="25" src="../img/chef.png" alt="Difficulty Score">
+                          <img data-template-type="attribute" data-template-attribute="class" data-template-value="3"
+                            width="25" src="../img/chef.png" alt="Difficulty Score">
+                          <img data-template-type="attribute" data-template-attribute="class" data-template-value="4"
+                            width="25" src="../img/chef.png" alt="Difficulty Score">
+                          <img data-template-type="attribute" data-template-attribute="class" data-template-value="5"
+                            width="25" src="../img/chef.png" alt="Difficulty Score">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div class="col mb-2">
-                  <div class="row">
-                    <div class="col pe-1">
-                      <input class="form-control focus-ring focus-ring-green password" type="password" value=""
-                        name="password" placeholder="Insert your password">
-                    </div>
-                    <div class="col-2 d-flex justify-content-end align-items-center ">
-                      <button type="button" class="btn btn-light border" onclick="mostraPassword(this)">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                          class="bi bi-eye" viewBox="0 0 16 16">
-                          <path
-                            d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8M1.173 8a13 13 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5s3.879 1.168 5.168 2.457A13 13 0 0 1 14.828 8q-.086.13-.195.288c-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5s-3.879-1.168-5.168-2.457A13 13 0 0 1 1.172 8z" />
-                          <path
-                            d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5M4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0" />
-                        </svg>
-                        <svg class="d-none" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                          fill="currentColor" class="bi bi-eye-slash" viewBox="0 0 16 16">
-                          <path
-                            d="M13.359 11.238C15.06 9.72 16 8 16 8s-3-5.5-8-5.5a7 7 0 0 0-2.79.588l.77.771A6 6 0 0 1 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13 13 0 0 1 14.828 8q-.086.13-.195.288c-.335.48-.83 1.12-1.465 1.755q-.247.248-.517.486z" />
-                          <path
-                            d="M11.297 9.176a3.5 3.5 0 0 0-4.474-4.474l.823.823a2.5 2.5 0 0 1 2.829 2.829zm-2.943 1.299.822.822a3.5 3.5 0 0 1-4.474-4.474l.823.823a2.5 2.5 0 0 0 2.829 2.829" />
-                          <path
-                            d="M3.35 5.47q-.27.24-.518.487A13 13 0 0 0 1.172 8l.195.288c.335.48.83 1.12 1.465 1.755C4.121 11.332 5.881 12.5 8 12.5c.716 0 1.39-.133 2.02-.36l.77.772A7 7 0 0 1 8 13.5C3 13.5 0 8 0 8s.939-1.721 2.641-3.238l.708.709zm10.296 8.884-12-12 .708-.708 12 12z" />
-                        </svg>
-                      </button>
-                    </div>
+                <div class="col-md-9">
+                  <div class="card-body">
+                    <!-- Review Date -->
+                    <p class="review-date text-secondary mb-2">
+                      <span data-template-type="content" data-template-value="date">mm-dd-yyyy</span>
+                    </p>
+
+                    <!-- Review Content -->
+                    <p data-template-type="content" data-template-value="content" class="review-text card-text fs-5">
+                      Lorem ipsum dolor
+                      sit
+                      amet
+                      consectetur adipisicing elit. Sunt quisquam ratione
+                      iure laboriosam ipsam, nesciunt pariatur ullam eius saepe blanditiis.
+                    </p>
                   </div>
-                  <div class=" mt-2 d-block text-danger text-center login-errato d-none">
-                    Invalid email or password
+                </div>
+                <!-- Review Metadata -->
+                <span data-template-type="attribute" data-template-attribute="data-timestamp"
+                  data-template-value="timestamp" class="d-none"></span>
+                <span data-template-type="attribute" data-template-attribute="data-recipe_id"
+                  data-template-value="recipe_id" class="d-none"></span>
+                <span data-template-type="attribute" data-template-attribute="data-email" data-template-value="email"
+                  class="d-none"></span>
+              </div>
+              <div class="review-delete" data-template-type="attribute" data-template-attribute="data-bs-recipe"
+                data-template-value="recipe" data-bs-toggle="modal" data-bs-target="#deleteReviewModal"
+                data-bs-recipe="Recipe Name">
+                <div class="w-100 h-100" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Delete Review">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </section>
+
+
+    <!-- Modals -->
+
+    <!-- Modal login-->
+    <div class="modal fade" id="login" tabindex="-1" aria-labelledby="login" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header bg-body-dark">
+            <h1 class="modal-title fs-2 fw-medium">It's nice to see you again!</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="container d-flex justify-content-center align-items-center">
+
+              <form onsubmit="return controllaELogin(this)">
+                <div class="row py-3 align-items-center">
+                  <div class="col-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                      class="bi bi-person-fill" viewBox="0 0 20 20">
+                      <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+                    </svg>
                   </div>
-                  <!-- <div class="pass"><a href="#" class="link-dark fs-sm text-decoration-underline">Have
+                  <div class="col">
+                    <input name="email" id="email-utente" class="form-control focus-ring focus-ring-green" type="email"
+                      placeholder="Insert your e-mail">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                      class="bi bi-lock-fill" viewBox="0 0 20 20">
+                      <path
+                        d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2m3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2" />
+                    </svg>
+                  </div>
+                  <div class="col mb-2">
+                    <div class="row">
+                      <div class="col pe-1">
+                        <input class="form-control focus-ring focus-ring-green password" type="password" value=""
+                          name="password" placeholder="Insert your password">
+                      </div>
+                      <div class="col-2 d-flex justify-content-end align-items-center ">
+                        <button type="button" class="btn btn-light border" onclick="mostraPassword(this)">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-eye" viewBox="0 0 16 16">
+                            <path
+                              d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8M1.173 8a13 13 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5s3.879 1.168 5.168 2.457A13 13 0 0 1 14.828 8q-.086.13-.195.288c-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5s-3.879-1.168-5.168-2.457A13 13 0 0 1 1.172 8z" />
+                            <path
+                              d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5M4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0" />
+                          </svg>
+                          <svg class="d-none" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                            fill="currentColor" class="bi bi-eye-slash" viewBox="0 0 16 16">
+                            <path
+                              d="M13.359 11.238C15.06 9.72 16 8 16 8s-3-5.5-8-5.5a7 7 0 0 0-2.79.588l.77.771A6 6 0 0 1 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13 13 0 0 1 14.828 8q-.086.13-.195.288c-.335.48-.83 1.12-1.465 1.755q-.247.248-.517.486z" />
+                            <path
+                              d="M11.297 9.176a3.5 3.5 0 0 0-4.474-4.474l.823.823a2.5 2.5 0 0 1 2.829 2.829zm-2.943 1.299.822.822a3.5 3.5 0 0 1-4.474-4.474l.823.823a2.5 2.5 0 0 0 2.829 2.829" />
+                            <path
+                              d="M3.35 5.47q-.27.24-.518.487A13 13 0 0 0 1.172 8l.195.288c.335.48.83 1.12 1.465 1.755C4.121 11.332 5.881 12.5 8 12.5c.716 0 1.39-.133 2.02-.36l.77.772A7 7 0 0 1 8 13.5C3 13.5 0 8 0 8s.939-1.721 2.641-3.238l.708.709zm10.296 8.884-12-12 .708-.708 12 12z" />
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+                    <div class=" mt-2 d-block text-danger text-center login-errato d-none">
+                      Invalid email or password
+                    </div>
+                    <!-- <div class="pass"><a href="#" class="link-dark fs-sm text-decoration-underline">Have
                                           you forgot your password?</a>
                                   </div> -->
+                  </div>
+
                 </div>
+                <input class="recipe_id" type="hidden" name="id" value="">
+                <div class="row button mx-auto mt-2 fit-content">
+                  <button type="submit" class="btn btn-dark">Login</button>
+                </div>
+              </form>
+            </div>
 
-              </div>
-              <input class="recipe_id" type="hidden" name="id" value="">
-              <div class="row button mx-auto mt-2 fit-content">
-                <button type="submit" class="btn btn-dark">Login</button>
-              </div>
-            </form>
           </div>
-
-        </div>
-        <div class="modal-footer">
-          <div class="">Not registered? <a href="#" class="link-success text-decoration-underline"
-              data-bs-toggle="modal" data-bs-target="#new-account">Create an account!</a></div>
+          <div class="modal-footer">
+            <div class="">Not registered? <a href="#" class="link-success text-decoration-underline"
+                data-bs-toggle="modal" data-bs-target="#new-account">Create an account!</a></div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- Modal recipe note -->
-  <div class="modal fade" id="recipe-note" tabindex="-1" aria-labelledby="recipe-note" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header bg-body-dark">
-          <h3 class="modal-title fs-4 fw-medium non-loggato">Log in to save your favourite recipes!</h3>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body ">
-          <div class="form-floating ">
-            <textarea class="form-control" placeholder="Scrivi la tua nota" id="note-text"
-              style="height: 100px"></textarea>
-            <label for="note-text">Leave here a comment for this recipe...</label>
+    <!-- Modal recipe note -->
+    <div class="modal fade" id="recipe-note" tabindex="-1" aria-labelledby="recipe-note" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header bg-body-dark">
+            <h3 class="modal-title fs-4 fw-medium non-loggato">Log in to save your favourite recipes!</h3>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body ">
+            <div class="form-floating ">
+              <textarea class="form-control" placeholder="Scrivi la tua nota" id="note-text"
+                style="height: 100px"></textarea>
+              <label for="note-text">Leave here a comment for this recipe...</label>
+            </div>
+
+            <div class=" d-flex justify-content-end mt-4">
+              <button type="submit" class="save-recipe btn btn-dark loggato d-none" onclick="saveRecipe(this)"
+                data-bs-dismiss="modal" aria-label="Close">Add to your cookbook</button>
+              <button type="submit" class="save-recipe btn btn-dark non-loggato " data-bs-dismiss="modal"
+                aria-label="Close" disabled>Add to your cookbook</button>
+
+            </div>
           </div>
 
-          <div class=" d-flex justify-content-end mt-4">
-            <button type="submit" class="save-recipe btn btn-dark loggato d-none" onclick="saveRecipe(this)"
-              data-bs-dismiss="modal" aria-label="Close">Add to your cookbook</button>
-            <button type="submit" class="save-recipe btn btn-dark non-loggato " data-bs-dismiss="modal"
-              aria-label="Close" disabled>Add to your cookbook</button>
-
-          </div>
         </div>
-
       </div>
     </div>
-  </div>
 
-  <!-- link javascript -->
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
-    integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
-    crossorigin="anonymous"></script>
-  <script src="../js/storage.js"></script>
-  <script src="../js/form.js"></script>
-  <script src="../js/api.js"></script>
-  <script src="../js/utils.js"></script>
-  <script type="module">
+    <!-- link javascript -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+      crossorigin="anonymous"></script>
+    <script src="../js/storage.js"></script>
+    <script src="../js/form.js"></script>
+    <script src="../js/api.js"></script>
+    <script src="../js/utils.js"></script>
+    <script type="module">
 
-    const id = getURLParam("id");
+      const id = getURLParam("id");
 
-    let recipe = await getById(id);
-    document.querySelector(".recipe_title").textContent = recipe.strMeal;
-    document.querySelector(".category_name").href = "ricerca.html?category=" + recipe.strCategory;
-    document.querySelector(".category_name > span").textContent = recipe.strCategory;
-    document.querySelector(".area_name").href = "ricerca.html?area=" + recipe.strArea;
-    document.querySelector(".area_name > span").textContent = recipe.strArea;
-    document.querySelector(".preparation").textContent = recipe.strInstructions;
-    document.querySelector(".recipe_img").src = recipe.strMealThumb;
-    document.querySelectorAll(".recipe_id").forEach((el) => el.value = recipe.idMeal);
-    document.querySelector(".card-save").setAttribute("data-recipe", recipe.idMeal)
-
-
-    let ingredient_container = document.querySelector(".ingredient_container");
-    let ingredient_template = document.querySelector(".ingredient_item");
-
-    let ingredients = extractIngredients(recipe);
-
-    for (let ingredient of ingredients) {
-      let ingredient_item = ingredient_template.cloneNode(true);
-      ingredient_item.classList.remove("d-none");
-      ingredient_item.querySelector(".ingredient_name").textContent = ingredient.name;
-      ingredient_item.querySelector(".ingredient_measure").textContent = ingredient.measure;
-      ingredient_item.querySelector(".ingredient_img").src = "https://www.themealdb.com/images/ingredients/" + ingredient.name + "-Small.png";
-      ingredient_item.querySelector(".ingredient_link").href = "ricerca.html?ingredient=" + ingredient.name;
-      ingredient_container.appendChild(ingredient_item);
-    }
+      let recipe = await getById(id);
+      document.querySelector(".recipe_title").textContent = recipe.strMeal;
+      document.querySelector(".category_name").href = "ricerca.html?category=" + recipe.strCategory;
+      document.querySelector(".category_name > span").textContent = recipe.strCategory;
+      document.querySelector(".area_name").href = "ricerca.html?area=" + recipe.strArea;
+      document.querySelector(".area_name > span").textContent = recipe.strArea;
+      document.querySelector(".preparation").textContent = recipe.strInstructions;
+      document.querySelector(".recipe_img").src = recipe.strMealThumb;
+      document.querySelectorAll(".recipe_id").forEach((el) => el.value = recipe.idMeal);
+      document.querySelector(".card-save").setAttribute("data-recipe", recipe.idMeal)
 
 
-    if (isInCookbook(id)) {
-      document.querySelector(".card-save>i").classList.remove("far");
-      document.querySelector(".card-save>i").classList.add("fas");
-    }
+      let ingredient_container = document.querySelector(".ingredient_container");
+      let ingredient_template = document.querySelector(".ingredient_item");
 
+      let ingredients = extractIngredients(recipe);
 
-    //recensioni
-    console.log(localStorage.recensioni);
-
-      let reviews = getReviewsById(id);
-
-      if (reviews && reviews.length > 0) {
-          document.querySelector(".zero_recensioni").classList.add("d-none");
-          let t_review = document.querySelector(".review_template");
-        
-        
-          for (let review of reviews) {
-              let review_card = t_review.cloneNode(true);
-              review_card.classList.remove("d-none");
-              review_card.querySelector(".review-user").textContent = getNomeCognome(review.utente);
-              review_card.querySelector(".review-date").textContent = review.date;
-              review_card.querySelector(".review-text").textContent = review.text;
-              
-              console.log(review);
-              
-              t_review.appendChild(review_card);
-
-          }
-
-        
+      for (let ingredient of ingredients) {
+        let ingredient_item = ingredient_template.cloneNode(true);
+        ingredient_item.classList.remove("d-none");
+        ingredient_item.querySelector(".ingredient_name").textContent = ingredient.name;
+        ingredient_item.querySelector(".ingredient_measure").textContent = ingredient.measure;
+        ingredient_item.querySelector(".ingredient_img").src = "https://www.themealdb.com/images/ingredients/" + ingredient.name + "-Small.png";
+        ingredient_item.querySelector(".ingredient_link").href = "ricerca.html?ingredient=" + ingredient.name;
+        ingredient_container.appendChild(ingredient_item);
       }
 
 
-  </script>
+      if (isInCookbook(id)) {
+        document.querySelector(".card-save>i").classList.remove("far");
+        document.querySelector(".card-save>i").classList.add("fas");
+      }
+
+
+      //recensioni
+
+      let reviews = getReviewsById(id);
+
+      let sumTaste = 0, sumDifficulty = 0;
+      for (let review of reviews) {
+        sumTaste += review.taste;
+        sumDifficulty += review.difficulty;
+      }
+
+      document.querySelector("#taste_text").textContent = Math.floor(sumTaste / reviews.length * 100) / 100;
+      document.querySelector("#diff_text").textContent = Math.floor(sumDifficulty / reviews.length * 100) / 100;
+
+      if (reviews && reviews.length > 0) {
+        document.querySelector(".zero_recensioni").classList.add("d-none");
+        let t_review = document.querySelector(".review_template");
+        let container_review = document.querySelector(".review_container");
+
+        for (let review of reviews) {
+          let review_card = t_review.cloneNode(true);
+          review_card.classList.remove("d-none");
+          review_card.querySelector(".review-user").textContent = getNomeCognome(review.utente);
+          review_card.querySelector(".review-date").textContent = review.date;
+          review_card.querySelector(".review-text").textContent = review.text;
+
+          let stars = review_card.querySelectorAll(".review-taste-score > img");
+          for (let i = review.taste; i < 5; i++) {
+            stars[i].classList.add("tint-black");
+          }
+
+          let hats = review_card.querySelectorAll(".review-difficulty-score > img");
+          for (let i = 0; i < review.difficulty; i++) {
+            hats[i].classList.add("tint-primary");
+          }
+
+          container_review.appendChild(review_card);
+
+        }
+
+
+      }
+
+
+    </script>
 
 
 
