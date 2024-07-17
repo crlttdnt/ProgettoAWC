@@ -161,7 +161,7 @@
           <div class="col-6 mx-auto fit-content">
             <label for="difficoltà" class="form-label text-uppercase fw-medium">Difficulty</label>
             <div class="container d-flex align-items-center" id="difficoltà">
-              <h3 id="diff_text" class="fw-medium fs-4 me-3 p-0 m-0">3.5</h3>
+              <h3 id="diff_text" class="fw-medium fs-4 me-3 p-0 m-0">--</h3>
               <img width="30" src="../img/chef.png" alt="" class="tint-primary" style="transform:translateY(-2px)">
             </div>
           </div>
@@ -169,7 +169,7 @@
           <div class="col-6 mx-auto fit-content">
             <label for="gusto" class="form-label text-uppercase fw-medium">Taste</label>
             <div class="container d-flex" id="gusto">
-              <h3 id="taste_text" class="fw-medium fs-4 me-3 p-0 m-0">3.5</h3>
+              <h3 id="taste_text" class="fw-medium fs-4 me-3 p-0 m-0">--</h3>
               <img width="30" src="../img/star.png" alt="" style="transform:translateY(-4px)">
             </div>
           </div>
@@ -623,15 +623,16 @@
     let reviews = getReviewsById(id);
 
     let sumTaste = 0, sumDifficulty = 0;
-    for (let review of reviews) {
-      sumTaste += review.taste;
-      sumDifficulty += review.difficulty;
-    }
-
-    document.querySelector("#taste_text").textContent = Math.floor(sumTaste / reviews.length * 100) / 100;
-    document.querySelector("#diff_text").textContent = Math.floor(sumDifficulty / reviews.length * 100) / 100;
 
     if (reviews && reviews.length > 0) {
+      for (let review of reviews) {
+        sumTaste += review.taste;
+        sumDifficulty += review.difficulty;
+      }
+
+      document.querySelector("#taste_text").textContent = Math.floor(sumTaste / reviews.length * 100) / 100;
+      document.querySelector("#diff_text").textContent = Math.floor(sumDifficulty / reviews.length * 100) / 100;
+
       document.querySelector(".zero_recensioni").classList.add("d-none");
       let t_review = document.querySelector(".review_template");
       let container_review = document.querySelector(".review_container");
