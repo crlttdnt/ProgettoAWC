@@ -235,7 +235,12 @@
 
       <div class="review_container">
         <!-- Recensione -->
-        <div class="review_template review-card | card m-3 p-3 rounded-5 shadow border-0 " style="max-width: 900px;"
+        <div class="zero_recensioni text-center fs-3">
+
+          There are no reviews for this recipe
+        </div>
+
+        <div class="review_template review-card | card m-3 p-3 rounded-5 shadow border-0 d-none" style="max-width: 900px;"
           data-template-type="attribute" data-template-attribute="data-my-review" data-template-value="my_review"
           data-my-review="false">
           <div class="row">
@@ -293,6 +298,7 @@
                 <p class="review-date text-secondary mb-2">
                   <span data-template-type="content" data-template-value="date">mm-dd-yyyy</span>
                 </p>
+
                 <!-- Review Content -->
                 <p data-template-type="content" data-template-value="content" class="review-text card-text fs-5">Lorem ipsum dolor
                   sit
@@ -488,47 +494,31 @@
     }
 
 
+    //recensioni
     console.log(localStorage.recensioni);
 
-    let review_container = document.querySelector(".review_container");
-    let review_template = document.querySelector(".review_template");
+      let reviews = getReviewsById(id);
 
-    const recensioniJSON = localStorage.getItem('recensioni');
-    if (recensioniJSON) {
-      const recensioni = JSON.parse(recensioniJSON);
+      if (reviews && reviews.length > 0) {
+          document.querySelector(".zero_recensioni").classList.add("d-none");
+          let t_review = document.querySelector(".review_template");
+        
+        
+          for (let review of reviews) {
+              let review_card = t_review.cloneNode(true);
+              review_card.classList.remove("d-none");
+              review_card.querySelector(".review-user").textContent = getNomeCognome(review.utente);
+              review_card.querySelector(".review-date").textContent = review.date;
+              review_card.querySelector(".review-text").textContent = review.text;
+              
+              console.log(review);
+              
+              t_review.appendChild(review_card);
 
-      for (const prodottoId in recensioni) {
-          let review_item = review_template.cloneNode(true);
-          const recensioniProdotto = recensioni[prodottoId];
-          recensioniProdotto.forEach(recensione => {
-          //review_item.classList.remove("d-none");
-          review_item.querySelector(".review-user").textContent = recensione.utente;
-          review_item.querySelector(".review-date").textContent = recensione.date;
-          
-          review_container.appendChild(review_item);
-          
-          console.log(recensione);
-          });
+          }
+
         
       }
-    }
-
-/*
-    for (let review of localStorage.recensioni) {
-      let review_item = review_template.cloneNode(true);
-      //review_item.classList.remove("d-none");
-      //review_item.querySelector(".review-user").textContent = review.utente;
-      //review_item.querySelector(".review-date").textContent = review.date;
-      
-      console.log(review);
-
-      //review_container.appendChild(review_item);
-    }
-      */
-
-
-   
-
 
 
   </script>
