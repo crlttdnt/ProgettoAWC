@@ -5,6 +5,7 @@ if (getUtenteLoggato()) {
     elementi_non_loggato.forEach((el) => el.classList.add("d-none"));
 }
 
+
 function getURLParam(name) {
     return new URLSearchParams(window.location.search).get(name);
 }

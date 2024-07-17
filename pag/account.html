@@ -23,9 +23,8 @@
 
 <body class="overflow-x-hidden">
 
+    <!-- Navigation -->
     <header>
-
-        <!-- Navigation -->
         <div class="container-xl mx-auto pt-4">
             <div class="bg-light rounded-3 position-relative">
                 <nav class="navbar navbar-expand-lg bg-body-primary">
@@ -37,38 +36,27 @@
 
                     <div class="collapse navbar-collapse px-4" id="navbarNav">
                         <div class="d-flex me-3">
-                            <a href="#">
+                            <a href="../index.html">
                                 <img src="../img/logo.png" alt="PGRC" height="50">
                             </a>
                         </div>
                         <ul class="navbar-nav d-flex justify-content-between align-items-center w-100 m-0 gap-4">
                             <li class="nav-item">
-                                <a class="nav-link text-uppercase fs-6" href="">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-uppercase fs-6" href="pag/ricerca.html">recipes</a>
+                                <a class="nav-link text-uppercase fs-6" href="../index.html">Home</a>
                             </li>
                             <li class="loggato d-none nav-item">
-                                <a class="nav-link text-uppercase fs-6" href="pag/account.html">My
+                                <a class="nav-link text-uppercase fs-6" href="account.html">My
                                     cookbook</a>
                             </li>
                             <li class="nav-item flex-grow-1">
-                                <form class="d-flex w-100" role="search" action="pag/ricerca.html">
+                                <form class="d-flex w-100" role="search" action="ricerca.html">
                                     <input class="form-control me-2 focus-ring focus-ring-light w-100" type="search"
                                         name="search" id="search" placeholder="Search" aria-label="Search">
-                                    <button type="submit" class="btn btn-outline-light me-2">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                            fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                                            <path
-                                                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
-                                        </svg>
+                                    <button type="submit" class="btn btn-dark me-2">
+                                        <i class="fas fa-search fs-6"></i>
                                     </button>
-                                    <a class="loggato d-none btn btn-outline-light" href="pag/account.html">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                            fill="currentColor" class="bi bi-person" viewBox="0 0 20 20">
-                                            <path
-                                                d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z" />
-                                        </svg>
+                                    <a class="loggato d-none btn btn-outline-dark" href="account.html">
+                                        <i class="far fa-user fs-6"></i>
                                     </a>
                                 </form>
                             </li>
@@ -86,10 +74,34 @@
                     </div>
                 </nav>
 
+                <div class="border-top d-flex justify-content-center gap-5">
+                    <div class="dropdown">
+                        <button class="btn dropdown-toggle my-2 text-uppercase" type="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Categoria
+                        </button>
+                        <ul class="categories_container dropdown-menu">
+                            <li class="categories_item d-none">
+                                <a class="category_name dropdown-item" href="#">Categoria</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="dropdown">
+                        <button class="btn dropdown-toggle my-2 text-uppercase" type="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Area
+                        </button>
+                        <ul class="area_container dropdown-menu">
+                            <li class="area_item d-none">
+                                <a class="area_name dropdown-item" href="#">Area</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
+
         </div>
-
-
     </header>
 
     <!-- Utente Loggato -->
@@ -100,7 +112,8 @@
                 <div class="w-100">
                     <div class="d-lg-flex justify-content-center gap-4 mx-lg-5 align-items-center">
                         <div class="d-flex justify-content-center">
-                            <img id="utente-img" src="../img/non-loggato.png" width="220 rem" height="220 rem" alt="">
+                            <img id="utente-img" src="../../img/non-loggato.png" width="220 rem" height="220 rem"
+                                alt="">
                         </div>
                         <div class="flex-grow-1">
                             <form onsubmit="return controllaEModificaUtente(this)">
@@ -152,7 +165,8 @@
 
 
                                 <div class="d-flex justify-content-end">
-                                    <button type="button" data-bs-toggle="modal" data-bs-target="#delete-account" class="btn btn-danger me-5"> Delete your
+                                    <button type="button" data-bs-toggle="modal" data-bs-target="#delete-account"
+                                        class="btn btn-danger me-5"> Delete your
                                         account</button>
                                     <button type="reset" class="btn btn-outline-dark me-2" onclick="logout()">Log
                                         out</button>
@@ -255,7 +269,6 @@
     </section>
 
 
-
     <!-- Utente non Loggato -->
     <section class="non-loggato ">
         <div class="container-xxl mx-auto mt-5">
@@ -263,7 +276,8 @@
                 <div class="container">
                     <div class="row ms-5">
                         <div class="col-3">
-                            <img id="utente-img" src="../img/non-loggato.png" width="220 rem" height="220 rem" alt="">
+                            <img id="utente-img" src="../../img/non-loggato.png" width="220 rem" height="220 rem"
+                                alt="">
                         </div>
                         <div class="col d-flex align-items-center">
                             <h3>Log in to unlock this page</h3>
@@ -275,6 +289,170 @@
     </section>
 
     <!-- Modals -->
+
+    <!-- Modal login-->
+    <div class="modal fade" id="login" tabindex="-1" aria-labelledby="login" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-body-dark">
+                    <h1 class="modal-title fs-2 fw-medium">It's nice to see you again!</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="container d-flex justify-content-center align-items-center">
+
+                        <form onsubmit="return controllaELogin(this)">
+                            <div class="row py-3 align-items-center">
+                                <div class="col-1">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="col">
+                                    <input name="email" id="email-utente"
+                                        class="form-control focus-ring focus-ring-green" type="email"
+                                        placeholder="Insert your e-mail">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-1">
+                                    <i class="fas fa-lock"></i>
+                                </div>
+                                <div class="col mb-2">
+                                    <div class="row">
+                                        <div class="col pe-1">
+                                            <input class="form-control focus-ring focus-ring-green password"
+                                                type="password" value="" name="password"
+                                                placeholder="Insert your password">
+                                        </div>
+                                        <div class="col-2 d-flex justify-content-end align-items-center ">
+                                            <button type="button" class="btn btn-light border"
+                                                onclick="mostraPassword(this)">
+                                                <i class="fas fa-eye"></i>
+                                                <i class="fas fa-eye-slash d-none"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class=" mt-2 d-block text-danger text-center login-errato d-none">
+                                        Invalid email or password
+                                    </div>
+                                    <!-- <div class="pass"><a href="#" class="link-dark fs-sm text-decoration-underline">Have
+                                          you forgot your password?</a>
+                                  </div> -->
+                                </div>
+
+                            </div>
+                            <div class="row button mx-auto mt-2 fit-content">
+                                <button type="submit" class="btn btn-dark">Login</button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <div class="">Not registered? <a href="#" class="link-success text-decoration-underline"
+                            data-bs-toggle="modal" data-bs-target="#new-account">Create an account!</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal new account -->
+    <div class="modal fade" id="new-account" tabindex="-1" aria-labelledby="new-account" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-body-dark">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form onsubmit="return controllaERegistraUtente(this);" name="registration_form">
+                        <div class="mb-3">
+                            <label for="email" class="form-label">E-mail address</label>
+                            <input name="email" id="email" class="form-control focus-ring focus-ring-green" type="email"
+                                oninput="controllaCampo(this)" required>
+                            <div class="invalid-feedback">
+                                Email not valid
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-6">
+                                <label for="password" class="form-label">Password</label>
+                                <input name="password" id="password"
+                                    class="form-control focus-ring focus-ring-green password" type="password" value=""
+                                    oninput="controllaCampo(this)"
+                                    pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d!?&%#.,]{8,}$"
+                                    aria-describedby="password-info">
+                                <div class="invalid-feedback">
+                                    The password does not meet the requirements
+                                </div>
+                            </div>
+                            <div class="col-md-6 ">
+                                <label for="password2" class="form-label">Confirm password</label>
+                                <div class="row mb-3">
+                                    <div class="col">
+                                        <input id="password2" class="form-control focus-ring focus-ring-green password"
+                                            oninput="controllaUguaglianzaPassword(document.querySelector('#password'), this)"
+                                            type="password" value="">
+                                        <div class="invalid-feedback">
+                                            The passwords are different
+                                        </div>
+                                    </div>
+                                    <div class="col-2 ms-1 d-flex justify-content-end align-items-center ">
+                                        <button type="button" class="btn btn-light border"
+                                            onclick="mostraPassword(this)">
+                                            <i class="fas fa-eye"></i>
+                                            <i class="fas fa-eye-slash d-none"></i>
+                                        </button>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <div id="password-info" class="form-text">
+                                The password must be above 8 characters and it must contain a letter and a number
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 col-12 mb-3">
+                                <label for="nome" class="form-label">First name</label>
+                                <input name="nome" id="nome" class="form-control focus-ring focus-ring-green"
+                                    type="text" value="" oninput="controllaCampo(this)" pattern="[a-zA-Z]{2,}$"
+                                    required>
+                            </div>
+                            <div class="col-md-6 col-12 mb-3">
+
+                                <label for="lname" class="form-label">Last name</label>
+                                <input name="lname" id="lname" class="form-control focus-ring focus-ring-green"
+                                    type="text" oninput="controllaCampo(this)" pattern="[a-zA-Z]{2,}$" required>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-md-6 col-12 mb-3">
+                                <label for="date" class="form-label">Date of Birth</label>
+                                <input name="date" id="birthdate" class="form-control focus-ring focus-ring-green "
+                                    type="date" oninput="controllaData(this)" required>
+                            </div>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input " id="checkbox" required>
+                            <label class="form-check-label" for="checkbox">I accept terms of use and privacy
+                                policy</label>
+                        </div>
+                        <div class=" d-flex justify-content-end">
+                            <button type="reset" class="btn btn-outline-dark me-2">Cancel</button>
+
+                            <button type="submit" class="btn btn-dark">Sign in</button>
+                        </div>
+
+                    </form>
+
+
+                </div>
+                <div class="modal-footer">
+                    <div class="">Already have an account? <a href="#" class="link-success text-decoration-underline"
+                            data-bs-toggle="modal" data-bs-target="#login">Login now!</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Modal recipe note -->
     <div class="modal fade" id="recipe-note" tabindex="-1" aria-labelledby="recipe-note" aria-hidden="true">
@@ -304,32 +482,6 @@
         </div>
     </div>
 
-    
-
-    <!-- Modal eliminare account -->
-    <div class="modal fade" id="delete-account" tabindex="-1" aria-labelledby="delete-account" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header bg-body-dark">
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class=" text-center mt-3">
-
-                        <h4 class="fs-5">If you delete your account all of your data will be deleted too</h4>
-                        <h4 class=" fs-4 text-danger  text-uppercase">Are you sure?</h4>
-
-                    </div>
-                    <div class="d-flex justify-content-center mt-3">
-                        <form action="../index.html" onsubmit="cancellaUtente()">
-                            <button type="submit" class="btn btn-outline-danger">Delete</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
 
     <!-- link javascript -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
@@ -343,6 +495,34 @@
     <script src="../js/api.js"></script>
     <script src="../js/utils.js"></script>
     <script type="module">
+
+        // Categories Dropdown Menu
+        let categories_container = document.querySelector(".categories_container");
+        let categories_template = document.querySelector(".categories_item");
+
+        let categories = await getCategories();
+
+        for (let category of categories) {
+            let categories_item = categories_template.cloneNode(true);
+            categories_item.classList.remove("d-none");
+            categories_item.querySelector(".category_name").textContent = category.strCategory;
+            categories_item.querySelector(".category_name").href = "ricerca.html?category=" + category.strCategory;
+            categories_container.appendChild(categories_item);
+        }
+
+        // Areas Dropdown Menu
+        let area_container = document.querySelector(".area_container");
+        let area_template = document.querySelector(".area_item");
+
+        let areas = await getAreas();
+
+        for (let area of areas) {
+            let area_item = area_template.cloneNode(true);
+            area_item.classList.remove("d-none");
+            area_item.querySelector(".area_name").textContent = area.strArea;
+            area_item.querySelector(".area_name").href = "ricerca.html?area=" + area.strArea;
+            area_container.appendChild(area_item);
+        }
 
         let dati_utente = getUtenteLoggato();
 
