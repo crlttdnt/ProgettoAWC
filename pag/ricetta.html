@@ -187,11 +187,11 @@
 
       <div class="bg-light px-5 py-4 rounded-5 shadow w-75">
 
-        <!-- Form Recensione -->
         <div class="non-loggato text-center fs-3">
 
           Log In to Review this Recipe
         </div>
+        <!-- Form Recensione -->
         <div class="loggato d-none card m-3 p-3 rounded-5 shadow border-0 logged-in-only" style="max-width: 900px;">
           <div class="row">
             <div class="col-md-11">
@@ -258,9 +258,11 @@
             There are no reviews for this recipe
           </div>
 
-          <div class="review_template review-card | card m-3 p-3 rounded-5 shadow border-0 d-none"
+          <div class="review_template review-card | card m-3 p-3 rounded-5 shadow border-0 d-none position-relative"
             style="max-width: 900px;" data-template-type="attribute" data-template-attribute="data-my-review"
             data-template-value="my_review" data-my-review="false">
+            <i class="review-delete fas fa-trash-alt position-absolute fs-4"
+              style="top:10%;right:3%;cursor:pointer"></i>
             <div class="row">
               <div class="col-md-3">
                 <div class="card-body">
@@ -640,6 +642,14 @@
         review_card.querySelector(".review-user").textContent = getNomeCognome(review.utente);
         review_card.querySelector(".review-date").textContent = review.date;
         review_card.querySelector(".review-text").textContent = review.text;
+
+        let delete_icon = review_card.querySelector(".review-delete");
+        console.log("remReview(" + id + ", '" + review.date + "', '" + review.text + "');");
+        delete_icon.setAttribute("onclick", "remReview(" + id + ", '" + review.date + "', '" + review.text + "');")
+
+        if (!getUtenteLoggato() || review.utente != getUtenteLoggato().email) {
+          delete_icon.classList.add("d-none");
+        }
 
         let stars = review_card.querySelectorAll(".review-taste-score > img");
         for (let i = review.taste; i < 5; i++) {
