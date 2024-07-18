@@ -1,3 +1,5 @@
+//chiamate alle API
+
 async function getRandomRecipe() {
     let random;
     await fetch("https://www.themealdb.com/api/json/v1/1/random.php")
